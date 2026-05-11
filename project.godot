@@ -15,7 +15,7 @@ config/description="You play as a dead guide dog helping his blind owner through
 config/version="v1.0.0"
 run/main_scene="uid://c4ty62qntnd4o"
 config/features=PackedStringArray("4.6", "GL Compatibility")
-boot_splash/bg_color=Color(0.9764706, 0.9764706, 0.9764706, 1)
+boot_splash/bg_color=Color(0, 0.62352943, 0.7411765, 1)
 boot_splash/show_image=false
 boot_splash/use_filter=false
 

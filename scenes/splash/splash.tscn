@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://c4ty62qntnd4o"]
 
-[ext_resource type="Texture2D" uid="uid://bmyk3wx18gws0" path="res://scenes/splash/resources/siklab.png" id="1_i52gs"]
 [ext_resource type="Script" uid="uid://br8h8173qw83i" path="res://scenes/splash/splash.gd" id="1_y4437"]
 [ext_resource type="Texture2D" uid="uid://b2ug2ao07syjp" path="res://scenes/splash/resources/godot.png" id="2_cwtag"]
+[ext_resource type="Texture2D" uid="uid://dcblgfkfplptv" path="res://scenes/splash/resources/siklab_dark.png" id="2_y4437"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_cwtag"]
 animation = &"logo_splash"
@@ -18,7 +18,7 @@ advance_mode = 2
 states/End/position = Vector2(929.3333, 82.96297)
 states/Start/position = Vector2(184, 82.22222)
 states/logo_splash/node = SubResource("AnimationNodeAnimation_cwtag")
-states/logo_splash/position = Vector2(356.66666, 82.666664)
+states/logo_splash/position = Vector2(352.66666, 83.06174)
 transitions = ["Start", "logo_splash", SubResource("AnimationNodeStateMachineTransition_y4437"), "logo_splash", "End", SubResource("AnimationNodeStateMachineTransition_wwhxh")]
 
 [sub_resource type="Animation" id="Animation_y4437"]
@@ -83,7 +83,7 @@ _data = {
 }
 
 [sub_resource type="Gradient" id="Gradient_e0arn"]
-colors = PackedColorArray(0.8080603, 0.8723983, 0.92495763, 1, 0.4745098, 0.62352943, 0.7411765, 1)
+colors = PackedColorArray(0.8080603, 0.8723983, 0.92495763, 1, 0, 0.62352943, 0.7411765, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_y4437"]
 gradient = SubResource("Gradient_e0arn")
@@ -95,8 +95,8 @@ fill_from = Vector2(1, 1)
 script = ExtResource("1_y4437")
 
 [node name="animation_tree" type="AnimationTree" parent="." unique_id=1819686290]
-active = false
 tree_root = SubResource("AnimationNodeStateMachine_a6n0j")
+anim_player = NodePath("../animation_player")
 
 [node name="animation_player" type="AnimationPlayer" parent="." unique_id=1414324883]
 libraries/ = SubResource("AnimationLibrary_a6n0j")
@@ -127,13 +127,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -37.75
-offset_top = -34.5
-offset_right = 37.75
-offset_bottom = 34.5
+offset_left = -30.375
+offset_top = -27.75
+offset_right = 30.375
+offset_bottom = 27.75
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_i52gs")
+texture = ExtResource("2_y4437")
 expand_mode = 3
 stretch_mode = 5
 
@@ -145,10 +145,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -56.679688
-offset_top = -20.0
-offset_right = 56.679688
-offset_bottom = 20.0
+offset_left = -41.333336
+offset_top = -15.5
+offset_right = 41.333336
+offset_bottom = 15.5
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_cwtag")
