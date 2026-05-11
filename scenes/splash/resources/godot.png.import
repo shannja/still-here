@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bmyk3wx18gws0"
-path="res://.godot/imported/siklab.png-cd5f00b7a39ea19bf14707acd38e9310.ctex"
+uid="uid://b2ug2ao07syjp"
+path="res://.godot/imported/godot.png-c5ec592216fb03d55ea4ac89ebdbb28a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/splash/res/siklab.png"
-dest_files=["res://.godot/imported/siklab.png-cd5f00b7a39ea19bf14707acd38e9310.ctex"]
+source_file="res://scenes/splash/resources/godot.png"
+dest_files=["res://.godot/imported/godot.png-c5ec592216fb03d55ea4ac89ebdbb28a.ctex"]
 
 [params]
 

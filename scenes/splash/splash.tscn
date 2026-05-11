@@ -1,29 +1,150 @@
 [gd_scene format=3 uid="uid://c4ty62qntnd4o"]
 
-[ext_resource type="Texture2D" uid="uid://bmyk3wx18gws0" path="res://scenes/splash/res/siklab.png" id="1_i52gs"]
+[ext_resource type="Texture2D" uid="uid://bmyk3wx18gws0" path="res://scenes/splash/resources/siklab.png" id="1_i52gs"]
+[ext_resource type="Script" uid="uid://br8h8173qw83i" path="res://scenes/splash/splash.gd" id="1_y4437"]
+[ext_resource type="Texture2D" uid="uid://b2ug2ao07syjp" path="res://scenes/splash/resources/godot.png" id="2_cwtag"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_cwtag"]
+animation = &"logo_splash"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_y4437"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_wwhxh"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_a6n0j"]
+states/End/position = Vector2(929.3333, 82.96297)
+states/Start/position = Vector2(184, 82.22222)
+states/logo_splash/node = SubResource("AnimationNodeAnimation_cwtag")
+states/logo_splash/position = Vector2(356.66666, 82.666664)
+transitions = ["Start", "logo_splash", SubResource("AnimationNodeStateMachineTransition_y4437"), "logo_splash", "End", SubResource("AnimationNodeStateMachineTransition_wwhxh")]
+
+[sub_resource type="Animation" id="Animation_y4437"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../godot_logo:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../dev_logo:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_wwhxh"]
+resource_name = "logo_splash"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../godot_logo:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.0333333, 1.9, 2.51),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../dev_logo:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(2.5333333, 3.1666667, 4.22, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_a6n0j"]
+_data = {
+&"RESET": SubResource("Animation_y4437"),
+&"logo_splash": SubResource("Animation_wwhxh")
+}
 
 [node name="splash" type="Node" unique_id=1059045580]
+script = ExtResource("1_y4437")
 
-[node name="background" type="ColorRect" parent="." unique_id=1715986808]
+[node name="animation_tree" type="AnimationTree" parent="." unique_id=1819686290]
+root_node = NodePath("../logo/background")
+tree_root = SubResource("AnimationNodeStateMachine_a6n0j")
+anim_player = NodePath("../animation_player")
+
+[node name="animation_player" type="AnimationPlayer" parent="." unique_id=1182947543]
+root_node = NodePath("../logo/background")
+libraries/ = SubResource("AnimationLibrary_a6n0j")
+
+[node name="logo" type="Control" parent="." unique_id=806482979]
+layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="dev_logo" type="TextureRect" parent="background" unique_id=412242856]
+[node name="background" type="ColorRect" parent="logo" unique_id=1715986808]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.9779369, 0.97793704, 0.9779369, 1)
+
+[node name="dev_logo" type="TextureRect" parent="logo" unique_id=412242856]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
+offset_left = -37.75
+offset_top = -34.5
+offset_right = 37.75
+offset_bottom = 34.5
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_i52gs")
 expand_mode = 3
 stretch_mode = 5
+
+[node name="godot_logo" type="TextureRect" parent="logo" unique_id=1466302776]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -56.679688
+offset_top = -20.0
+offset_right = 56.679688
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_cwtag")
+expand_mode = 3
+stretch_mode = 5
+
+[connection signal="animation_finished" from="animation_tree" to="." method="_on_animation_tree_animation_finished"]
