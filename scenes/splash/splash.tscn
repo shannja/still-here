@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://br8h8173qw83i" path="res://scenes/splash/splash.gd" id="1_y4437"]
 [ext_resource type="Texture2D" uid="uid://b2ug2ao07syjp" path="res://scenes/splash/resources/godot.png" id="2_cwtag"]
-[ext_resource type="Texture2D" uid="uid://dcblgfkfplptv" path="res://scenes/splash/resources/siklab_dark.png" id="2_y4437"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_cwtag"]
 animation = &"logo_splash"
@@ -91,6 +90,9 @@ width = 256
 height = 256
 fill_from = Vector2(1, 1)
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_cwtag"]
+load_path = "res://.godot/imported/siklab.png-2cb3efec38d72108edf95f16a0eca261.ctex"
+
 [node name="splash" type="Node" unique_id=1059045580]
 script = ExtResource("1_y4437")
 
@@ -133,7 +135,7 @@ offset_right = 30.375
 offset_bottom = 27.75
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_y4437")
+texture = SubResource("CompressedTexture2D_cwtag")
 expand_mode = 3
 stretch_mode = 5
 

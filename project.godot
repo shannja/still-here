@@ -23,8 +23,11 @@ boot_splash/use_filter=false
 
 window/size/viewport_width=320
 window/size/viewport_height=180
+window/size/extend_to_title=true
+window/size/window_width_override=1024
+window/size/window_height_override=576
 window/stretch/mode="viewport"
-window/stretch/scale_mode="integer"
+window/stretch/aspect="expand"
 
 [editor]
 

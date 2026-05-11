@@ -10,7 +10,6 @@
 
 [sub_resource type="Environment" id="Environment_r8yej"]
 background_mode = 3
-tonemap_mode = 2
 glow_enabled = true
 glow_bloom = 0.2
 adjustment_enabled = true
@@ -214,18 +213,6 @@ region = Rect2(676, 378, 169, 126)
 atlas = ExtResource("1_mcvr8")
 region = Rect2(0, 504, 169, 126)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ns7vx"]
-atlas = ExtResource("1_mcvr8")
-region = Rect2(169, 504, 169, 126)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_a0fu0"]
-atlas = ExtResource("1_mcvr8")
-region = Rect2(338, 504, 169, 126)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_pafgo"]
-atlas = ExtResource("1_mcvr8")
-region = Rect2(507, 504, 169, 126)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_50dkp"]
 atlas = ExtResource("4_r8yej")
 region = Rect2(0, 0, 169, 126)
@@ -311,15 +298,6 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_riv3r")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ns7vx")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_a0fu0")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_pafgo")
 }],
 "loop": false,
 "name": &"affection",
@@ -353,19 +331,27 @@ animations = [{
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4xbh2"]
 atlas = ExtResource("7_3y2rt")
-region = Rect2(0, 0, 32, 32)
+region = Rect2(0, 0, 24, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2rjk0"]
 atlas = ExtResource("7_3y2rt")
-region = Rect2(32, 0, 32, 32)
+region = Rect2(24, 0, 24, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fqr1d"]
 atlas = ExtResource("7_3y2rt")
-region = Rect2(0, 32, 32, 32)
+region = Rect2(0, 25, 12, 12)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gxxro"]
 atlas = ExtResource("7_3y2rt")
-region = Rect2(32, 32, 32, 32)
+region = Rect2(0, 36, 12, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fstgh"]
+atlas = ExtResource("7_3y2rt")
+region = Rect2(13, 25, 9, 11)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wshxo"]
+atlas = ExtResource("7_3y2rt")
+region = Rect2(13, 36, 9, 11)
 
 [node name="menu" type="Node" unique_id=790710199]
 script = ExtResource("1_e0arn")
@@ -399,16 +385,17 @@ expand_mode = 1
 [node name="islands" type="AnimatedSprite2D" parent="background" unique_id=1884396799]
 sprite_frames = SubResource("SpriteFrames_50dkp")
 autoplay = "default"
-frame_progress = 0.40973192
+frame_progress = 0.318211
 centered = false
 
 [node name="hero" type="AnimatedSprite2D" parent="background" unique_id=466585993]
 position = Vector2(162.88725, 86.20652)
 scale = Vector2(0.75, 0.75)
 sprite_frames = SubResource("SpriteFrames_037ec")
-animation = &"alive"
+animation = &"affection"
 autoplay = "alive"
-frame_progress = 0.45197845
+frame = 20
+frame_progress = 1.0
 centered = false
 
 [node name="affection" type="Button" parent="background/hero" unique_id=2123339074]
@@ -441,25 +428,47 @@ grow_vertical = 2
 mouse_filter = 2
 
 [node name="play" type="TextureButton" parent="button_group" unique_id=1755457746]
-layout_mode = 0
-offset_left = 272.1126
-offset_top = 19.386597
-offset_right = 293.9483
-offset_bottom = 41.410534
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -34.0
+offset_top = 11.0
+offset_right = -10.0
+offset_bottom = 35.0
+grow_horizontal = 0
 texture_normal = SubResource("AtlasTexture_4xbh2")
 texture_pressed = SubResource("AtlasTexture_2rjk0")
-ignore_texture_size = true
-stretch_mode = 5
+stretch_mode = 0
 
 [node name="sound" type="TextureButton" parent="button_group" unique_id=949052570]
-layout_mode = 0
-offset_left = 279.2475
-offset_top = 43.999386
-offset_right = 293.9483
-offset_bottom = 57.104706
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -22.0
+offset_top = 36.0
+offset_right = -10.0
+offset_bottom = 48.0
+grow_horizontal = 0
+toggle_mode = true
 texture_normal = SubResource("AtlasTexture_fqr1d")
 texture_pressed = SubResource("AtlasTexture_gxxro")
-ignore_texture_size = true
-stretch_mode = 5
+stretch_mode = 0
+
+[node name="info" type="TextureButton" parent="button_group" unique_id=68556693]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -20.0
+offset_top = 51.0
+offset_right = -11.0
+offset_bottom = 62.0
+grow_horizontal = 0
+texture_normal = SubResource("AtlasTexture_fstgh")
+texture_pressed = SubResource("AtlasTexture_wshxo")
+stretch_mode = 0
 
 [connection signal="pressed" from="background/hero/affection" to="." method="_on_affection_pressed"]
