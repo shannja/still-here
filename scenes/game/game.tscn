@@ -1,3 +1,48 @@
 [gd_scene format=3 uid="uid://61uqcuhpe50l"]
 
+[ext_resource type="Texture2D" uid="uid://byl77j6cpg54e" path="res://scenes/game/resources/apartment/doggie_bed.png" id="1_7h61r"]
+[ext_resource type="PackedScene" uid="uid://baqrmmnubsqmd" path="res://objects/jasper/jasper.tscn" id="1_sul5r"]
+[ext_resource type="Texture2D" uid="uid://idcaxi0i2fka" path="res://scenes/game/resources/apartment/floor.png" id="2_0sr1o"]
+
+[sub_resource type="Environment" id="Environment_ifgtf"]
+background_mode = 3
+glow_enabled = true
+glow_bloom = 0.5
+adjustment_enabled = true
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kelw5"]
+size = Vector2(460, 8)
+
 [node name="game" type="Node" unique_id=1929238918]
+
+[node name="world_environment" type="WorldEnvironment" parent="." unique_id=83449452]
+environment = SubResource("Environment_ifgtf")
+
+[node name="camera" type="Camera2D" parent="." unique_id=292221366]
+position = Vector2(92, 137)
+zoom = Vector2(2, 2)
+
+[node name="colliders" type="StaticBody2D" parent="." unique_id=1755324861]
+
+[node name="floor" type="CollisionShape2D" parent="colliders" unique_id=2070649949]
+position = Vector2(152, 178)
+shape = SubResource("RectangleShape2D_kelw5")
+
+[node name="map" type="Node2D" parent="." unique_id=2069441160]
+
+[node name="doggie_bed" type="Sprite2D" parent="map" unique_id=1708039707]
+position = Vector2(89, 167)
+texture = ExtResource("1_7h61r")
+
+[node name="floor" type="Sprite2D" parent="map" unique_id=1181579977]
+texture_repeat = 2
+position = Vector2(152, 178)
+scale = Vector2(0.9583333, 1)
+texture = ExtResource("2_0sr1o")
+region_enabled = true
+region_rect = Rect2(0, 0, 512, 8)
+
+[node name="player" type="Node2D" parent="." unique_id=828675757]
+
+[node name="jasper" parent="player" unique_id=246550592 instance=ExtResource("1_sul5r")]
+position = Vector2(89, 158)

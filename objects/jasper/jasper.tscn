@@ -1,33 +1,54 @@
 [gd_scene format=3 uid="uid://baqrmmnubsqmd"]
 
 [ext_resource type="Texture2D" uid="uid://oaewl38d6etw" path="res://objects/jasper/idle.png" id="1_ghb5p"]
+[ext_resource type="Texture2D" uid="uid://cvpltbhg828x4" path="res://objects/jasper/walk.png" id="2_mvhpe"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ghb5p"]
-size = Vector2(30, 21)
+size = Vector2(41.990967, 25.953152)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mvhpe"]
 atlas = ExtResource("1_ghb5p")
-region = Rect2(0, 0, 96, 96)
+region = Rect2(0, 0, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ltdcx"]
 atlas = ExtResource("1_ghb5p")
-region = Rect2(96, 0, 96, 96)
+region = Rect2(48, 0, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lrvf0"]
 atlas = ExtResource("1_ghb5p")
-region = Rect2(192, 0, 96, 96)
+region = Rect2(0, 48, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xkh5h"]
 atlas = ExtResource("1_ghb5p")
-region = Rect2(0, 96, 96, 96)
+region = Rect2(48, 48, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tk1lv"]
 atlas = ExtResource("1_ghb5p")
-region = Rect2(96, 96, 96, 96)
+region = Rect2(0, 96, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dn5ua"]
 atlas = ExtResource("1_ghb5p")
-region = Rect2(192, 96, 96, 96)
+region = Rect2(48, 96, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xjpnd"]
+atlas = ExtResource("2_mvhpe")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wtrv4"]
+atlas = ExtResource("2_mvhpe")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fk7ut"]
+atlas = ExtResource("2_mvhpe")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2uidm"]
+atlas = ExtResource("2_mvhpe")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u16bj"]
+atlas = ExtResource("2_mvhpe")
+region = Rect2(192, 0, 48, 48)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_xjpnd"]
 animations = [{
@@ -53,17 +74,47 @@ animations = [{
 "loop": true,
 "name": &"idle",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xjpnd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wtrv4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fk7ut")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2uidm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u16bj")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 9.0
 }]
+
+[sub_resource type="Environment" id="Environment_mvhpe"]
+background_mode = 3
+glow_enabled = true
+glow_intensity = 0.5
+glow_bloom = 1.0
+adjustment_enabled = true
 
 [node name="jasper" type="CharacterBody2D" unique_id=246550592]
 
 [node name="shape" type="CollisionShape2D" parent="." unique_id=1653457288]
-visible = false
-position = Vector2(0, 0.5)
+position = Vector2(0.57674026, 2.9765763)
 shape = SubResource("RectangleShape2D_ghb5p")
 
 [node name="texture" type="AnimatedSprite2D" parent="." unique_id=1490910110]
-scale = Vector2(0.35, 0.35)
+modulate = Color(1.8247963, 1.8247963, 1.8247963, 1)
 sprite_frames = SubResource("SpriteFrames_xjpnd")
 animation = &"idle"
-frame_progress = 0.5827772
+autoplay = "idle"
+frame_progress = 0.7003823
+
+[node name="world_environment" type="WorldEnvironment" parent="." unique_id=1550907294]
+environment = SubResource("Environment_mvhpe")
