@@ -110,11 +110,11 @@ position = Vector2(0.57674026, 2.9765763)
 shape = SubResource("RectangleShape2D_ghb5p")
 
 [node name="texture" type="AnimatedSprite2D" parent="." unique_id=1490910110]
-modulate = Color(1.8247963, 1.8247963, 1.8247963, 1)
+modulate = Color(1, 1, 1, 0.39215687)
 sprite_frames = SubResource("SpriteFrames_xjpnd")
-animation = &"idle"
+animation = &"walk"
 autoplay = "idle"
-frame_progress = 0.7003823
+frame_progress = 0.6394978
 
 [node name="world_environment" type="WorldEnvironment" parent="." unique_id=1550907294]
 environment = SubResource("Environment_mvhpe")

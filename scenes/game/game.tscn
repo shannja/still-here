@@ -1,48 +1,271 @@
 [gd_scene format=3 uid="uid://61uqcuhpe50l"]
 
 [ext_resource type="Texture2D" uid="uid://byl77j6cpg54e" path="res://scenes/game/resources/apartment/doggie_bed.png" id="1_7h61r"]
+[ext_resource type="Texture2D" uid="uid://c3it824sv66eo" path="res://scenes/game/level/common/wall_4.png" id="1_kelw5"]
 [ext_resource type="PackedScene" uid="uid://baqrmmnubsqmd" path="res://objects/jasper/jasper.tscn" id="1_sul5r"]
 [ext_resource type="Texture2D" uid="uid://idcaxi0i2fka" path="res://scenes/game/resources/apartment/floor.png" id="2_0sr1o"]
+[ext_resource type="Texture2D" uid="uid://3o6tk2d5w4j" path="res://scenes/game/level/common/wall_3.png" id="2_lfrn8"]
+[ext_resource type="Texture2D" uid="uid://ba4nh4tgvyptn" path="res://scenes/game/resources/apartment/table.png" id="5_5i0tg"]
+[ext_resource type="Texture2D" uid="uid://dbeo0iqaybjkp" path="res://scenes/game/resources/apartment/light.png" id="7_2a8rs"]
+[ext_resource type="Texture2D" uid="uid://bi3wjjvtanhas" path="res://scenes/game/resources/apartment/shelf.png" id="7_bdhmt"]
+[ext_resource type="Texture2D" uid="uid://fr3u747o8h8t" path="res://scenes/game/resources/apartment/light_bulb.png" id="8_4j704"]
+[ext_resource type="Texture2D" uid="uid://2883p7ws3r2o" path="res://common/light.png" id="8_87uf6"]
+[ext_resource type="Texture2D" uid="uid://d07cxoiycoeb4" path="res://scenes/game/resources/apartment/painting_1.png" id="9_kp23o"]
+[ext_resource type="Texture2D" uid="uid://dy8ylkjm6c1ef" path="res://scenes/game/resources/apartment/painting_3.png" id="11_vaxfo"]
+[ext_resource type="Texture2D" uid="uid://ch6fhahc0evth" path="res://scenes/game/resources/apartment/painting_2.png" id="12_5jirj"]
+[ext_resource type="Texture2D" uid="uid://b3ixs7bteph8q" path="res://scenes/game/resources/apartment/chair.png" id="12_ftsea"]
+[ext_resource type="Texture2D" uid="uid://b7llnf10d2k51" path="res://scenes/game/resources/apartment/hanging_shelf.png" id="13_otnwt"]
+[ext_resource type="Texture2D" uid="uid://bwj4paxxttk2t" path="res://scenes/game/resources/apartment/typewriter.png" id="16_uyinl"]
+[ext_resource type="Texture2D" uid="uid://bp2owh37f40a3" path="res://scenes/game/resources/apartment/books.png" id="17_10c2w"]
+[ext_resource type="Texture2D" uid="uid://dl57e1leom6qt" path="res://scenes/game/resources/apartment/plants.png" id="18_pg2xm"]
+[ext_resource type="Texture2D" uid="uid://c01l1eixukpxn" path="res://scenes/game/resources/apartment/pictures.png" id="19_10c2w"]
 
 [sub_resource type="Environment" id="Environment_ifgtf"]
 background_mode = 3
+background_canvas_max_layer = 1
+tonemap_mode = 2
 glow_enabled = true
-glow_bloom = 0.5
+glow_intensity = 0.5
+glow_bloom = 1.0
 adjustment_enabled = true
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kelw5"]
-size = Vector2(460, 8)
+size = Vector2(416.83334, 8)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_bdhmt"]
+polygon = PackedVector2Array(211, 144, 243, 144, 243, 142, 211, 142)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_ftsea"]
+polygon = PackedVector2Array(163, 144, 163, 158, 165, 161, 207, 161, 209, 158, 209, 145, 210, 145, 210, 159, 209, 159, 209, 162, 163, 162, 163, 159, 162, 159, 162, 144)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_otnwt"]
+polygon = PackedVector2Array(293, 110, 341, 110, 341, 174, 293, 174)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_3xj4h"]
+polygon = PackedVector2Array(0, 174, 416, 174, 416, 182, 0, 182)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_5v6r0"]
+polygon = PackedVector2Array(108, 121, 76, 121, 76, 123, 108, 123)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_uyinl"]
+polygon = PackedVector2Array(79.49403, 116.99421, 86.498566, 117.04768, 86.41836, 120.01525, 85.4559, 120.01525, 85.4559, 121.00444, 80.5367, 120.95097, 80.429756, 120.041985, 79.4673, 119.98852)
 
 [node name="game" type="Node" unique_id=1929238918]
 
 [node name="world_environment" type="WorldEnvironment" parent="." unique_id=83449452]
 environment = SubResource("Environment_ifgtf")
 
-[node name="camera" type="Camera2D" parent="." unique_id=292221366]
-position = Vector2(92, 137)
-zoom = Vector2(2, 2)
+[node name="canvas_modulate" type="CanvasModulate" parent="world_environment" unique_id=878581628]
+color = Color(0.2901961, 0.2901961, 0.33333334, 1)
+
+[node name="map" type="Node2D" parent="." unique_id=2069441160]
+
+[node name="apartment" type="Node2D" parent="map" unique_id=472184454]
+
+[node name="wall_lower" type="Sprite2D" parent="map/apartment" unique_id=106382516]
+texture_repeat = 2
+position = Vector2(-1.0000038, 142)
+texture = ExtResource("1_kelw5")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 417.085, 32)
+
+[node name="wall_upper" type="Sprite2D" parent="map/apartment" unique_id=150095857]
+texture_repeat = 2
+position = Vector2(-1.0000038, 38)
+texture = ExtResource("2_lfrn8")
+centered = false
+region_enabled = true
+region_rect = Rect2(8, 0, 417.115, 104.05)
+metadata/_edit_lock_ = true
+
+[node name="floor" type="Sprite2D" parent="map/apartment" unique_id=1181579977]
+texture_repeat = 2
+position = Vector2(-1.0000038, 174)
+scale = Vector2(0.9999999, 1)
+texture = ExtResource("2_0sr1o")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 417, 8)
+
+[node name="light" type="Sprite2D" parent="map/apartment" unique_id=894306762]
+position = Vector2(206, 54)
+texture = ExtResource("7_2a8rs")
+
+[node name="light_bulb" type="Sprite2D" parent="map/apartment/light" unique_id=825381991]
+modulate = Color(12.230712, 12.230712, 12.230712, 1)
+position = Vector2(-0.5, 15)
+texture = ExtResource("8_4j704")
+
+[node name="furnitures" type="Node2D" parent="map/apartment" unique_id=210337772]
+
+[node name="doggie_bed" type="Sprite2D" parent="map/apartment/furnitures" unique_id=1708039707]
+position = Vector2(123, 167)
+texture = ExtResource("1_7h61r")
+
+[node name="shelf" type="Sprite2D" parent="map/apartment/furnitures" unique_id=813739605]
+position = Vector2(317, 142)
+texture = ExtResource("7_bdhmt")
+
+[node name="table" type="Sprite2D" parent="map/apartment/furnitures" unique_id=1586912803]
+position = Vector2(272, 158)
+texture = ExtResource("5_5i0tg")
+
+[node name="painting_1" type="Sprite2D" parent="map/apartment/furnitures" unique_id=1964710101]
+position = Vector2(135, 100)
+texture = ExtResource("9_kp23o")
+
+[node name="painting_2" type="Sprite2D" parent="map/apartment/furnitures" unique_id=1558586137]
+position = Vector2(93, 89)
+texture = ExtResource("12_5jirj")
+
+[node name="painting_3" type="Sprite2D" parent="map/apartment/furnitures" unique_id=438086115]
+position = Vector2(187, 90)
+texture = ExtResource("11_vaxfo")
+
+[node name="chair" type="Sprite2D" parent="map/apartment/furnitures" unique_id=66284914]
+position = Vector2(186, 142)
+texture = ExtResource("12_ftsea")
+
+[node name="hanging_shelf" type="Sprite2D" parent="map/apartment/furnitures" unique_id=210191408]
+position = Vector2(92.14583, 126.51039)
+texture = ExtResource("13_otnwt")
+
+[node name="hanging_shelf_2" type="Sprite2D" parent="map/apartment/furnitures" unique_id=2121786619]
+position = Vector2(237.76991, 95.31471)
+texture = ExtResource("13_otnwt")
+
+[node name="hanging_shelf_3" type="Sprite2D" parent="map/apartment/furnitures" unique_id=556272633]
+position = Vector2(271.66064, 95.31471)
+texture = ExtResource("13_otnwt")
+
+[node name="typewriter" type="Sprite2D" parent="map/apartment/furnitures" unique_id=1265392404]
+position = Vector2(311.68448, 118.511284)
+texture = ExtResource("16_uyinl")
+
+[node name="books" type="Sprite2D" parent="map/apartment/furnitures" unique_id=1605429595]
+position = Vector2(311.22736, 131.51025)
+texture = ExtResource("17_10c2w")
+
+[node name="books_2" type="Sprite2D" parent="map/apartment/furnitures" unique_id=586382652]
+position = Vector2(323.05188, 143.48465)
+texture = ExtResource("17_10c2w")
+flip_h = true
+
+[node name="plants" type="Sprite2D" parent="map/apartment/furnitures" unique_id=1482391166]
+position = Vector2(333.2607, 154.44044)
+texture = ExtResource("18_pg2xm")
+region_enabled = true
+region_rect = Rect2(17, 0, 7, 11)
+
+[node name="plants_3" type="Sprite2D" parent="map/apartment/furnitures" unique_id=1394275979]
+position = Vector2(229.93411, 84.30794)
+texture = ExtResource("18_pg2xm")
+region_enabled = true
+region_rect = Rect2(0, 0, 9, 11)
+
+[node name="plants_4" type="Sprite2D" parent="map/apartment/furnitures" unique_id=649288245]
+position = Vector2(270.49197, 84.45658)
+texture = ExtResource("18_pg2xm")
+region_enabled = true
+region_rect = Rect2(17, 0, 7, 11)
+
+[node name="plants_5" type="Sprite2D" parent="map/apartment/furnitures" unique_id=656571110]
+position = Vector2(82.47198, 115.51914)
+texture = ExtResource("18_pg2xm")
+region_enabled = true
+region_rect = Rect2(24, 0, 8, 11)
+
+[node name="glow_layer" type="CanvasLayer" parent="." unique_id=739427107]
+layer = 2
+follow_viewport_enabled = true
+
+[node name="player" type="Node2D" parent="glow_layer" unique_id=828675757]
+
+[node name="jasper" parent="glow_layer/player" unique_id=246550592 instance=ExtResource("1_sul5r")]
+position = Vector2(131, 158)
+
+[node name="camera" type="Camera2D" parent="glow_layer/player/jasper" unique_id=292221366]
+position = Vector2(47, -24)
+zoom = Vector2(1.3, 1.3)
+limit_left = 0
+limit_top = 36
+limit_right = 480
+limit_bottom = 180
+limit_smoothed = true
 
 [node name="colliders" type="StaticBody2D" parent="." unique_id=1755324861]
 
 [node name="floor" type="CollisionShape2D" parent="colliders" unique_id=2070649949]
-position = Vector2(152, 178)
+position = Vector2(207.58333, 178)
 shape = SubResource("RectangleShape2D_kelw5")
 
-[node name="map" type="Node2D" parent="." unique_id=2069441160]
+[node name="lighting" type="Node2D" parent="." unique_id=572911201]
+z_index = -4
+z_as_relative = false
 
-[node name="doggie_bed" type="Sprite2D" parent="map" unique_id=1708039707]
-position = Vector2(89, 167)
-texture = ExtResource("1_7h61r")
+[node name="apartment" type="PointLight2D" parent="lighting" unique_id=1153265102]
+position = Vector2(205, 83)
+color = Color(1, 1, 0.35686275, 1)
+energy = 0.75
+shadow_enabled = true
+texture = ExtResource("8_87uf6")
+texture_scale = 1.5
+metadata/_edit_lock_ = true
 
-[node name="floor" type="Sprite2D" parent="map" unique_id=1181579977]
-texture_repeat = 2
-position = Vector2(152, 178)
-scale = Vector2(0.9583333, 1)
-texture = ExtResource("2_0sr1o")
+[node name="table" type="LightOccluder2D" parent="lighting" unique_id=1907220701]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(45.5, 0)
+occluder = SubResource("OccluderPolygon2D_bdhmt")
+
+[node name="chair" type="LightOccluder2D" parent="lighting" unique_id=617400919]
+modulate = Color(1, 1, 1, 0)
+occluder = SubResource("OccluderPolygon2D_ftsea")
+
+[node name="shelf" type="LightOccluder2D" parent="lighting" unique_id=1572690656]
+modulate = Color(1, 1, 1, 0)
+occluder = SubResource("OccluderPolygon2D_otnwt")
+
+[node name="floor" type="LightOccluder2D" parent="lighting" unique_id=668338752]
+modulate = Color(1, 1, 1, 0)
+occluder = SubResource("OccluderPolygon2D_3xj4h")
+
+[node name="hanging_shelf" type="LightOccluder2D" parent="lighting" unique_id=1010505429]
+occluder = SubResource("OccluderPolygon2D_5v6r0")
+
+[node name="hanging_shelf_2" type="LightOccluder2D" parent="lighting" unique_id=1289032749]
+position = Vector2(145.62408, -31.195679)
+occluder = SubResource("OccluderPolygon2D_5v6r0")
+
+[node name="hanging_shelf_3" type="LightOccluder2D" parent="lighting" unique_id=2120007974]
+position = Vector2(179.5148, -31.195679)
+occluder = SubResource("OccluderPolygon2D_5v6r0")
+
+[node name="pot" type="LightOccluder2D" parent="lighting" unique_id=891239082]
+occluder = SubResource("OccluderPolygon2D_uyinl")
+
+[node name="pot_2" type="LightOccluder2D" parent="lighting" unique_id=1155150273]
+position = Vector2(146.95885, -31.195679)
+occluder = SubResource("OccluderPolygon2D_uyinl")
+
+[node name="pot_3" type="LightOccluder2D" parent="lighting" unique_id=981295127]
+position = Vector2(187.4333, -31.033928)
+occluder = SubResource("OccluderPolygon2D_uyinl")
+
+[node name="pictures" type="Sprite2D" parent="." unique_id=96247958]
+position = Vector2(265.18045, 137.49942)
+texture = ExtResource("19_10c2w")
 region_enabled = true
-region_rect = Rect2(0, 0, 512, 8)
+region_rect = Rect2(0, 0, 13, 11)
 
-[node name="player" type="Node2D" parent="." unique_id=828675757]
+[node name="pictures_2" type="Sprite2D" parent="." unique_id=1721480885]
+position = Vector2(243.54376, 85.38065)
+texture = ExtResource("19_10c2w")
+region_enabled = true
+region_rect = Rect2(12, 0, 13, 11)
 
-[node name="jasper" parent="player" unique_id=246550592 instance=ExtResource("1_sul5r")]
-position = Vector2(89, 158)
+[node name="pictures_3" type="Sprite2D" parent="." unique_id=424858494]
+position = Vector2(98.2083, 116.59392)
+texture = ExtResource("19_10c2w")
+region_enabled = true
+region_rect = Rect2(24, 0, 8, 11)
