@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://ch6fhahc0evth" path="res://scenes/game/resources/apartment/painting_2.png" id="12_5jirj"]
 [ext_resource type="Texture2D" uid="uid://b3ixs7bteph8q" path="res://scenes/game/resources/apartment/chair.png" id="12_ftsea"]
 [ext_resource type="Texture2D" uid="uid://b7llnf10d2k51" path="res://scenes/game/resources/apartment/hanging_shelf.png" id="13_otnwt"]
+[ext_resource type="Texture2D" uid="uid://c0qx8060u5836" path="res://scenes/game/resources/apartment/stove.png" id="14_af6p5"]
 [ext_resource type="Texture2D" uid="uid://cc2m2w0oh03nb" path="res://scenes/game/resources/apartment/hanging_shelf_2.png" id="17_5v6r0"]
 [ext_resource type="Texture2D" uid="uid://bp2owh37f40a3" path="res://scenes/game/resources/apartment/books.png" id="17_10c2w"]
 [ext_resource type="Texture2D" uid="uid://g5nofso85t07" path="res://scenes/game/resources/apartment/small_cabinet.png" id="17_uyinl"]
@@ -25,6 +26,20 @@
 [ext_resource type="Texture2D" uid="uid://c01l1eixukpxn" path="res://scenes/game/resources/apartment/pictures.png" id="19_10c2w"]
 [ext_resource type="Texture2D" uid="uid://136th24o6vb7" path="res://scenes/game/resources/apartment/door.png" id="19_gc57s"]
 [ext_resource type="Texture2D" uid="uid://53csqrny4m3s" path="res://scenes/game/resources/apartment/refrigerator.png" id="20_8b66f"]
+[ext_resource type="Texture2D" uid="uid://da7mjiu23y1jy" path="res://scenes/game/resources/apartment/television.png" id="22_firvq"]
+[ext_resource type="Texture2D" uid="uid://buykm4ywvjkj2" path="res://scenes/game/resources/apartment/painting_4.png" id="24_wdnak"]
+[ext_resource type="Texture2D" uid="uid://bqqwy8jk4i2tk" path="res://scenes/game/resources/apartment/painting_5.png" id="25_fty5b"]
+[ext_resource type="Texture2D" uid="uid://qpiow0aso3ks" path="res://scenes/game/resources/apartment/books_2.png" id="28_l2dhg"]
+[ext_resource type="Texture2D" uid="uid://cfyc773083oe8" path="res://scenes/game/resources/apartment/painting_6.png" id="29_fydea"]
+[ext_resource type="Texture2D" uid="uid://bwmr7hxkyid6b" path="res://scenes/game/resources/apartment/vase.png" id="29_l2dhg"]
+[ext_resource type="Texture2D" uid="uid://b53kwi8x7en4j" path="res://scenes/game/resources/apartment/bottle.png" id="31_8krtj"]
+[ext_resource type="Texture2D" uid="uid://kjvqk7oh5x7q" path="res://scenes/game/resources/apartment/refrigerator_sticker_2.png" id="34_mumkj"]
+[ext_resource type="Texture2D" uid="uid://cplyyo8woqr08" path="res://scenes/game/resources/apartment/refrigerator_sticker.png" id="35_2vph8"]
+[ext_resource type="Texture2D" uid="uid://d07cxoiycoeb4" path="res://scenes/game/resources/apartment/painting_1.png" id="35_tyhjx"]
+[ext_resource type="Texture2D" uid="uid://ceo65j3xvxxsl" path="res://scenes/game/resources/apartment/vent.png" id="36_0gkf7"]
+[ext_resource type="Texture2D" uid="uid://cyystj0txi5mf" path="res://scenes/game/resources/apartment/clock.png" id="36_5q2xh"]
+[ext_resource type="Texture2D" uid="uid://djt06ftu0unye" path="res://objects/sam/idle.png" id="36_6ehwc"]
+[ext_resource type="Texture2D" uid="uid://c6wfl4msk7ekp" path="res://scenes/game/resources/apartment/key_holder.png" id="37_sikks"]
 
 [sub_resource type="Environment" id="Environment_ifgtf"]
 background_mode = 3
@@ -35,8 +50,106 @@ glow_intensity = 0.5
 glow_bloom = 1.0
 adjustment_enabled = true
 
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_6ehwc"]
+animation = &"idle"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_6ehwc"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_0gkf7"]
+states/idle/node = SubResource("AnimationNodeAnimation_6ehwc")
+states/idle/position = Vector2(359.33334, 20.000008)
+transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_6ehwc")]
+graph_offset = Vector2(-19, -30)
+
+[sub_resource type="Animation" id="Animation_tyhjx"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_6ehwc"]
+resource_name = "idle"
+length = 0.03333667
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [&"idle", 1.0, false],
+"method": &"play"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tyhjx"]
+_data = {
+&"RESET": SubResource("Animation_tyhjx"),
+&"idle": SubResource("Animation_6ehwc")
+}
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tyhjx"]
+atlas = ExtResource("36_6ehwc")
+region = Rect2(0, 0, 64, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5q2xh"]
+atlas = ExtResource("36_6ehwc")
+region = Rect2(64, 0, 64, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sikks"]
+atlas = ExtResource("36_6ehwc")
+region = Rect2(128, 0, 64, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ah1mj"]
+atlas = ExtResource("36_6ehwc")
+region = Rect2(0, 96, 64, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t5owt"]
+atlas = ExtResource("36_6ehwc")
+region = Rect2(64, 96, 64, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_41gcl"]
+atlas = ExtResource("36_6ehwc")
+region = Rect2(128, 96, 64, 96)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0gkf7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tyhjx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5q2xh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sikks")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ah1mj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t5owt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_41gcl")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kelw5"]
-size = Vector2(554.92944, 8)
+size = Vector2(579.5234, 8)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_8krtj"]
+polygon = PackedVector2Array(0, 9, 49.0149, 8.983093, 48.96728, -0.0046081543, 0, 0)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_l2dhg"]
+polygon = PackedVector2Array(-5, -15, -5, -12, -4, -12, -4, -11, -3, -11, -3, -7, -4, -7, -4, -6, -7, -6, -7, -5, -9, -5, -9, -4, -11, -4, -11, -3, -12, -3, -12, -1, -13, -1, -13, 7, -12, 7, -12, 8, -11, 8, -11, 10, -10, 10, -10, 11, -9, 11, -9, 12, -8, 12, -8, 13, -7, 13, -7, 14, -5, 14, -5, 15, 5, 15, 5, 14, 7, 14, 7, 13, 8, 13, 8, 12, 9, 12, 9, 11, 10, 11, 10, 10, 11, 10, 11, 8, 12, 8, 12, 7, 13, 7, 13, -1, 12, -1, 12, -3, 11, -3, 11, -4, 9, -4, 9, -5, 7, -5, 7, -6, 4, -6, 4, -7, 3, -7, 3, -11, 4, -11, 4, -12, 5, -12, 5, -15)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_firvq"]
+polygon = PackedVector2Array(-10, -16, -10, -13, -9, -13, -9, -12, -8, -12, -8, -11, -7, -11, -7, -10, -6, -10, -6, -9, -7, -9, -7, -8, -14, -8, -14, -7, -15, -7, -15, -6, -16, -6, -16, 14, -14, 14, -14, 15, -13, 15, -13, 16, 13, 16, 13, 15, 14, 15, 14, 14, 16, 14, 16, -6, 15, -6, 15, -7, 14, -7, 14, -8, 1, -8, 1, -9, 0, -9, 0, -10, 1, -10, 1, -11, 2, -11, 2, -12, 3, -12, 3, -13, 4, -13, 4, -16, 3, -16, 3, -14, 2, -14, 2, -13, 1, -13, 1, -12, 0, -12, 0, -11, -1, -11, -1, -10, -5, -10, -5, -11, -6, -11, -6, -12, -7, -12, -7, -13, -8, -13, -8, -14, -9, -14, -9, -16)
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_bdhmt"]
 polygon = PackedVector2Array(211, 144, 243, 144, 243, 142, 211, 142)
@@ -60,7 +173,7 @@ polygon = PackedVector2Array(79.49403, 116.99421, 86.498566, 117.04768, 86.41836
 polygon = PackedVector2Array(-15.327188, -20.509888, -14.518458, -20.47754, -14.48611, -21.383316, -13.547984, -21.480362, -13.515634, -22.418495, -11.509986, -22.54789, -11.509986, -23.486015, 11.637881, -23.353447, 11.465653, -22.707596, 13.403207, -22.449257, 13.36015, -21.545067, 14.350455, -21.458954, 14.522681, -20.42559, 15.46993, -20.42559, 15.523225, 19.50695, 14.434365, 19.50695, 14.548982, 20.309273, 13.632047, 20.36657, 13.5174265, 21.455437, -13.589501, 21.455437, -13.532191, 20.538506, -14.449128, 20.423882, -14.449128, 19.449638, -15.366065, 19.449638)
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_pg2xm"]
-polygon = PackedVector2Array(6.802761, 110.254486, 54.46571, 109.99116, 54.46571, 173.71732, 6.539425, 173.71732)
+polygon = PackedVector2Array(6.8671875, 109.99219, 54.46571, 109.99116, 54.46571, 173.71732, 6.539425, 173.71732)
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_gc57s"]
 polygon = PackedVector2Array(6.802761, 110.254486, 54.46571, 109.99116, 54.21573, 142.57903, 6.5304413, 142.98012)
@@ -81,7 +194,7 @@ position = Vector2(40.837784, 142)
 texture = ExtResource("1_kelw5")
 centered = false
 region_enabled = true
-region_rect = Rect2(0, 0, 549.515, 32)
+region_rect = Rect2(0, 0, 455.035, 32)
 
 [node name="wall_lower_2" type="Sprite2D" parent="map" unique_id=262104237]
 texture_repeat = 2
@@ -97,7 +210,7 @@ position = Vector2(57.5744, 37.950104)
 texture = ExtResource("2_lfrn8")
 centered = false
 region_enabled = true
-region_rect = Rect2(8, 0, 549.515, 104.05)
+region_rect = Rect2(8, 0, 438.875, 104.05)
 
 [node name="wall_upper_2" type="Sprite2D" parent="map" unique_id=950907973]
 texture_repeat = 2
@@ -114,10 +227,10 @@ scale = Vector2(0.9999999, 1)
 texture = ExtResource("2_0sr1o")
 centered = false
 region_enabled = true
-region_rect = Rect2(0, 0, 549.49, 8)
+region_rect = Rect2(0, 0, 563.905, 8)
 
 [node name="light_2" type="Sprite2D" parent="map" unique_id=1038776814]
-position = Vector2(429.75323, 52.133972)
+position = Vector2(434.3017, 52.133972)
 texture = ExtResource("7_2a8rs")
 
 [node name="light_bulb" type="Sprite2D" parent="map/light_2" unique_id=108237174]
@@ -126,7 +239,7 @@ position = Vector2(-0.5, 15)
 texture = ExtResource("8_4j704")
 
 [node name="light_3" type="Sprite2D" parent="map" unique_id=2108476356]
-position = Vector2(103.793335, 52.133972)
+position = Vector2(112.69939, 52.133972)
 texture = ExtResource("7_2a8rs")
 
 [node name="light_bulb" type="Sprite2D" parent="map/light_3" unique_id=2095643235]
@@ -134,15 +247,24 @@ modulate = Color(12.230712, 12.230712, 12.230712, 1)
 position = Vector2(-0.5, 15)
 texture = ExtResource("8_4j704")
 
+[node name="light_4" type="Sprite2D" parent="map" unique_id=116492884]
+position = Vector2(0.51460266, 52.133972)
+texture = ExtResource("7_2a8rs")
+
+[node name="light_bulb" type="Sprite2D" parent="map/light_4" unique_id=1052765391]
+modulate = Color(12.230712, 12.230712, 12.230712, 1)
+position = Vector2(-0.5, 15)
+texture = ExtResource("8_4j704")
+
 [node name="furnitures" type="Node2D" parent="map" unique_id=210337772]
+
+[node name="dog_plate" type="Sprite2D" parent="map/furnitures" unique_id=1560808954]
+position = Vector2(367.6454, 171.00188)
+texture = ExtResource("7_1iff4")
 
 [node name="doggie_bed" type="Sprite2D" parent="map/furnitures" unique_id=1708039707]
 position = Vector2(172, 167)
 texture = ExtResource("1_7h61r")
-
-[node name="dog_plate" type="Sprite2D" parent="map/furnitures/doggie_bed" unique_id=1560808954]
-position = Vector2(170.19952, 4.001877)
-texture = ExtResource("7_1iff4")
 
 [node name="table" type="Sprite2D" parent="map/furnitures" unique_id=1586912803]
 position = Vector2(129, 158)
@@ -160,6 +282,11 @@ texture = ExtResource("11_vaxfo")
 position = Vector2(235, 142)
 texture = ExtResource("12_ftsea")
 
+[node name="stove" type="Sprite2D" parent="map/furnitures/chair" unique_id=1192964840]
+position = Vector2(-198.17757, 9.49793)
+scale = Vector2(1.1330684, 1.1330684)
+texture = ExtResource("14_af6p5")
+
 [node name="hanging_shelf_4" type="Sprite2D" parent="map/furnitures" unique_id=1134032726]
 position = Vector2(293, 74.47129)
 texture = ExtResource("17_5v6r0")
@@ -174,6 +301,14 @@ texture = ExtResource("13_otnwt")
 
 [node name="hanging_shelf_2" type="Sprite2D" parent="map/furnitures" unique_id=2121786619]
 position = Vector2(284.1458, 101.98213)
+texture = ExtResource("13_otnwt")
+
+[node name="hanging_shelf_7" type="Sprite2D" parent="map/furnitures" unique_id=767293135]
+position = Vector2(-3.884697, 101.98575)
+texture = ExtResource("13_otnwt")
+
+[node name="hanging_shelf_8" type="Sprite2D" parent="map/furnitures" unique_id=188431086]
+position = Vector2(-42.24942, 101.98575)
 texture = ExtResource("13_otnwt")
 
 [node name="hanging_shelf_6" type="Sprite2D" parent="map/furnitures" unique_id=1688466988]
@@ -215,7 +350,7 @@ region_enabled = true
 region_rect = Rect2(12, 0, 13, 11)
 
 [node name="pictures_3" type="Sprite2D" parent="map/furnitures" unique_id=424858494]
-position = Vector2(136.2083, 114.574776)
+position = Vector2(129.12517, 114.52037)
 texture = ExtResource("19_10c2w")
 region_enabled = true
 region_rect = Rect2(24, 0, 8, 11)
@@ -226,6 +361,10 @@ texture = ExtResource("18_gc57s")
 
 [node name="small_cabinet" type="Sprite2D" parent="map/furnitures" unique_id=1437056500]
 position = Vector2(291.2174, 157.56863)
+texture = ExtResource("17_uyinl")
+
+[node name="small_cabinet_2" type="Sprite2D" parent="map/furnitures" unique_id=1172491242]
+position = Vector2(-6.271307, 157.56863)
 texture = ExtResource("17_uyinl")
 
 [node name="lamp" type="Sprite2D" parent="map/furnitures" unique_id=1987088743]
@@ -245,26 +384,77 @@ region_rect = Rect2(0, 0, 14, 16)
 position = Vector2(286.42935, 79.49017)
 texture = ExtResource("17_10c2w")
 
-[node name="books_2" type="Sprite2D" parent="map/furnitures" unique_id=2086925531]
-position = Vector2(339.4604, 79.47331)
-texture = ExtResource("17_10c2w")
-flip_h = true
-
-[node name="books_3" type="Sprite2D" parent="map/furnitures" unique_id=1893171708]
-position = Vector2(308.65063, 77.46844)
-rotation = -1.5707964
-texture = ExtResource("17_10c2w")
-flip_h = true
-region_enabled = true
-region_rect = Rect2(0, 0, 13, 11)
+[node name="television" type="Sprite2D" parent="map/furnitures" unique_id=1745789567]
+position = Vector2(73.822136, 93.96475)
+texture = ExtResource("22_firvq")
 
 [node name="door" type="Sprite2D" parent="map/furnitures" unique_id=1556902081]
-position = Vector2(429.70374, 126.00136)
+position = Vector2(434.71576, 126.00136)
 texture = ExtResource("19_gc57s")
 
 [node name="refrigerator" type="Sprite2D" parent="map/furnitures" unique_id=1494848638]
-position = Vector2(38.48023, 117.602)
+position = Vector2(-46.1136, 150.45921)
 texture = ExtResource("20_8b66f")
+
+[node name="painting_4" type="Sprite2D" parent="map/furnitures" unique_id=190476893]
+position = Vector2(336.11368, 130.57504)
+texture = ExtResource("24_wdnak")
+
+[node name="painting_5" type="Sprite2D" parent="map/furnitures" unique_id=1405431992]
+position = Vector2(139.05417, 114.509514)
+texture = ExtResource("25_fty5b")
+
+[node name="books_2" type="Sprite2D" parent="map/furnitures" unique_id=1473312921]
+position = Vector2(308.278, 79.4741)
+texture = ExtResource("28_l2dhg")
+
+[node name="vase" type="Sprite2D" parent="map/furnitures" unique_id=701754686]
+position = Vector2(473.64093, 158.9774)
+texture = ExtResource("29_l2dhg")
+
+[node name="sink" type="Sprite2D" parent="map/furnitures" unique_id=2002120629]
+texture_repeat = 2
+position = Vector2(-30.46236, 128.21326)
+texture = ExtResource("2_lfrn8")
+centered = false
+region_enabled = true
+region_rect = Rect2(16, 0, 49.05, 9)
+
+[node name="painting_6" type="Sprite2D" parent="map/furnitures" unique_id=1972776912]
+position = Vector2(-43.07303, 137.14612)
+texture = ExtResource("29_fydea")
+
+[node name="bottle" type="Sprite2D" parent="map/furnitures" unique_id=2105919199]
+position = Vector2(4.619957, 92.00607)
+texture = ExtResource("31_8krtj")
+
+[node name="refrigerator_sticker_2" type="Sprite2D" parent="map/furnitures" unique_id=446431066]
+position = Vector2(-39.762676, 147.47958)
+rotation = 0.3445572
+texture = ExtResource("34_mumkj")
+
+[node name="refrigerator_sticker" type="Sprite2D" parent="map/furnitures" unique_id=378353787]
+position = Vector2(-52.047268, 156.92145)
+rotation = -0.2950518
+scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("35_2vph8")
+
+[node name="vent" type="Sprite2D" parent="map/furnitures" unique_id=307222]
+position = Vector2(36.74429, 68.83197)
+scale = Vector2(0.76559526, 0.76559526)
+texture = ExtResource("36_0gkf7")
+
+[node name="painting_1" type="Sprite2D" parent="map/furnitures" unique_id=1980924682]
+position = Vector2(182.63031, 106.90692)
+texture = ExtResource("35_tyhjx")
+
+[node name="clock" type="Sprite2D" parent="map/furnitures" unique_id=232400952]
+position = Vector2(182.40443, 57.485546)
+texture = ExtResource("36_5q2xh")
+
+[node name="key_holder" type="Sprite2D" parent="map/furnitures" unique_id=627753471]
+position = Vector2(388.85355, 107.80756)
+texture = ExtResource("37_sikks")
 
 [node name="glow_layer" type="CanvasLayer" parent="." unique_id=739427107]
 layer = 2
@@ -272,28 +462,48 @@ follow_viewport_enabled = true
 
 [node name="player" type="Node2D" parent="glow_layer" unique_id=828675757]
 
+[node name="sam" type="Node2D" parent="glow_layer/player" unique_id=475929977]
+
+[node name="animation_tree" type="AnimationTree" parent="glow_layer/player/sam" unique_id=1066791190]
+tree_root = SubResource("AnimationNodeStateMachine_0gkf7")
+anim_player = NodePath("../animation_player")
+
+[node name="animation_player" type="AnimationPlayer" parent="glow_layer/player/sam" unique_id=1582538022]
+libraries/ = SubResource("AnimationLibrary_tyhjx")
+
+[node name="texture" type="AnimatedSprite2D" parent="glow_layer/player/sam" unique_id=1996419929]
+position = Vector2(245.3816, 125.99814)
+sprite_frames = SubResource("SpriteFrames_0gkf7")
+animation = &"idle"
+frame_progress = 0.58599806
+
 [node name="jasper" parent="glow_layer/player" unique_id=246550592 instance=ExtResource("1_sul5r")]
-position = Vector2(180, 158)
+position = Vector2(170.18494, 158)
 
 [node name="camera" type="Camera2D" parent="glow_layer/player/jasper" unique_id=292221366]
 position = Vector2(0, -47.995934)
 zoom = Vector2(1.3, 1.3)
 limit_left = -66
-limit_top = 41
-limit_right = 480
-limit_bottom = 182
+limit_top = 39
+limit_right = 491
+limit_bottom = 181
 limit_smoothed = true
 position_smoothing_enabled = true
 position_smoothing_speed = 2.0
 
+[node name="test_camera" type="Camera2D" parent="glow_layer" unique_id=1428354163]
+position = Vector2(215.80835, 107.90419)
+enabled = false
+zoom = Vector2(0.565, 0.565)
+
 [node name="colliders" type="StaticBody2D" parent="." unique_id=1755324861]
 
 [node name="floor" type="CollisionShape2D" parent="colliders" unique_id=2070649949]
-position = Vector2(210.06795, 178)
+position = Vector2(222.36491, 178)
 shape = SubResource("RectangleShape2D_kelw5")
 
 [node name="wall" type="CollisionShape2D" parent="colliders" unique_id=1018796387]
-position = Vector2(480.5064, 131.19643)
+position = Vector2(494.21588, 131.19643)
 rotation = 1.5707964
 shape = SubResource("RectangleShape2D_kelw5")
 
@@ -306,8 +516,23 @@ shape = SubResource("RectangleShape2D_kelw5")
 z_index = -4
 z_as_relative = false
 
+[node name="sink" type="LightOccluder2D" parent="lighting" unique_id=1374998229]
+position = Vector2(-30.46236, 128.21326)
+occluder = SubResource("OccluderPolygon2D_8krtj")
+
+[node name="vase" type="LightOccluder2D" parent="lighting" unique_id=1608346330]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(473.64093, 158.9774)
+occluder = SubResource("OccluderPolygon2D_l2dhg")
+
+[node name="television" type="LightOccluder2D" parent="lighting" unique_id=361416589]
+modulate = Color(1, 1, 1, 0)
+self_modulate = Color(1, 1, 1, 0)
+position = Vector2(73.822136, 93.96475)
+occluder = SubResource("OccluderPolygon2D_firvq")
+
 [node name="apartment" type="PointLight2D" parent="lighting" unique_id=1484416098]
-position = Vector2(429.33258, 68.96808)
+position = Vector2(433.88104, 68.96808)
 color = Color(1, 1, 0.35686275, 1)
 energy = 0.5
 shadow_enabled = true
@@ -324,7 +549,16 @@ texture_scale = 0.5
 metadata/_edit_lock_ = true
 
 [node name="apartment_2" type="PointLight2D" parent="lighting" unique_id=815396103]
-position = Vector2(104.00229, 68.49887)
+position = Vector2(112.90834, 68.49887)
+color = Color(1, 1, 0.35686275, 1)
+energy = 0.5
+shadow_enabled = true
+texture = ExtResource("8_87uf6")
+texture_scale = 1.5
+metadata/_edit_lock_ = true
+
+[node name="apartment_4" type="PointLight2D" parent="lighting" unique_id=78502215]
+position = Vector2(0.7235565, 68.49887)
 color = Color(1, 1, 0.35686275, 1)
 energy = 0.5
 shadow_enabled = true
@@ -336,61 +570,87 @@ metadata/_edit_lock_ = true
 modulate = Color(1, 1, 1, 0)
 position = Vector2(-97.5, 0)
 occluder = SubResource("OccluderPolygon2D_bdhmt")
+metadata/_edit_lock_ = true
 
 [node name="chair" type="LightOccluder2D" parent="lighting" unique_id=617400919]
 modulate = Color(1, 1, 1, 0)
 position = Vector2(49, 0)
 occluder = SubResource("OccluderPolygon2D_ftsea")
+metadata/_edit_lock_ = true
 
 [node name="floor" type="LightOccluder2D" parent="lighting" unique_id=668338752]
 modulate = Color(1, 1, 1, 0)
 position = Vector2(49, 0)
 occluder = SubResource("OccluderPolygon2D_3xj4h")
+metadata/_edit_lock_ = true
 
 [node name="hanging_shelf" type="LightOccluder2D" parent="lighting" unique_id=1010505429]
 position = Vector2(38, -2.0191422)
 occluder = SubResource("OccluderPolygon2D_5v6r0")
+metadata/_edit_lock_ = true
 
 [node name="hanging_shelf_2" type="LightOccluder2D" parent="lighting" unique_id=1289032749]
 position = Vector2(192, -24.52826)
 occluder = SubResource("OccluderPolygon2D_5v6r0")
+metadata/_edit_lock_ = true
+
+[node name="hanging_shelf_5" type="LightOccluder2D" parent="lighting" unique_id=1462577181]
+position = Vector2(-95.88666, -24.469864)
+occluder = SubResource("OccluderPolygon2D_5v6r0")
+metadata/_edit_lock_ = true
+
+[node name="hanging_shelf_7" type="LightOccluder2D" parent="lighting" unique_id=2116104542]
+position = Vector2(-134.24857, -24.524643)
+occluder = SubResource("OccluderPolygon2D_5v6r0")
+metadata/_edit_lock_ = true
 
 [node name="hanging_shelf_6" type="LightOccluder2D" parent="lighting" unique_id=1073742900]
 position = Vector2(193, -58.52871)
 occluder = SubResource("OccluderPolygon2D_10c2w")
+metadata/_edit_lock_ = true
 
 [node name="hanging_shelf_4" type="LightOccluder2D" parent="lighting" unique_id=391798932]
 position = Vector2(259, -24.52826)
 occluder = SubResource("OccluderPolygon2D_5v6r0")
+metadata/_edit_lock_ = true
 
 [node name="hanging_shelf_3" type="LightOccluder2D" parent="lighting" unique_id=2120007974]
 position = Vector2(225.89072, -24.638283)
 occluder = SubResource("OccluderPolygon2D_5v6r0")
+metadata/_edit_lock_ = true
 
 [node name="pot" type="LightOccluder2D" parent="lighting" unique_id=891239082]
 position = Vector2(38, -2.0191422)
 occluder = SubResource("OccluderPolygon2D_uyinl")
+metadata/_edit_lock_ = true
 
 [node name="pot_2" type="LightOccluder2D" parent="lighting" unique_id=1155150273]
 position = Vector2(193.33476, -24.52826)
 occluder = SubResource("OccluderPolygon2D_uyinl")
+metadata/_edit_lock_ = true
 
 [node name="refrigerator" type="LightOccluder2D" parent="lighting" unique_id=1504687923]
-position = Vector2(38.48023, 117.602)
+modulate = Color(1, 1, 1, 0)
+position = Vector2(-46.1136, 150.45921)
 occluder = SubResource("OccluderPolygon2D_3jaai")
+metadata/_edit_lock_ = true
 
 [node name="pot_3" type="LightOccluder2D" parent="lighting" unique_id=981295127]
 position = Vector2(234, -24.515152)
 occluder = SubResource("OccluderPolygon2D_uyinl")
+metadata/_edit_lock_ = true
 
 [node name="pot_4" type="LightOccluder2D" parent="lighting" unique_id=2146849568]
 position = Vector2(11.780453, -10.986443)
 occluder = SubResource("OccluderPolygon2D_uyinl")
+metadata/_edit_lock_ = true
 
 [node name="cabinet" type="LightOccluder2D" parent="lighting" unique_id=2067597175]
 position = Vector2(49, 0)
 occluder = SubResource("OccluderPolygon2D_pg2xm")
+metadata/_edit_lock_ = true
 
 [node name="cabinet_2" type="LightOccluder2D" parent="lighting" unique_id=230682239]
 position = Vector2(260.78836, 31.125137)
 occluder = SubResource("OccluderPolygon2D_gc57s")
+metadata/_edit_lock_ = true

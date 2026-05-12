@@ -19,6 +19,12 @@ boot_splash/bg_color=Color(0, 0.62352943, 0.7411765, 1)
 boot_splash/show_image=false
 boot_splash/use_filter=false
 
+[autoload]
+
+Configurations="*uid://dlcfinr1a487o"
+Settings="*uid://cj0j0qsq7hg3e"
+States="*uid://bqwt8xneblxp"
+
 [display]
 
 window/size/viewport_width=320
