@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://baqrmmnubsqmd"]
 
 [ext_resource type="Texture2D" uid="uid://oaewl38d6etw" path="res://objects/jasper/idle.png" id="1_ghb5p"]
+[ext_resource type="Script" uid="uid://bhm4qg6wrf4ag" path="res://objects/jasper/jasper.gd" id="1_ltdcx"]
 [ext_resource type="Texture2D" uid="uid://cvpltbhg828x4" path="res://objects/jasper/walk.png" id="2_mvhpe"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ghb5p"]
@@ -96,14 +97,8 @@ animations = [{
 "speed": 9.0
 }]
 
-[sub_resource type="Environment" id="Environment_mvhpe"]
-background_mode = 3
-glow_enabled = true
-glow_intensity = 0.5
-glow_bloom = 1.0
-adjustment_enabled = true
-
 [node name="jasper" type="CharacterBody2D" unique_id=246550592]
+script = ExtResource("1_ltdcx")
 
 [node name="shape" type="CollisionShape2D" parent="." unique_id=1653457288]
 position = Vector2(0.57674026, 2.9765763)
@@ -115,6 +110,3 @@ sprite_frames = SubResource("SpriteFrames_xjpnd")
 animation = &"walk"
 autoplay = "idle"
 frame_progress = 0.6394978
-
-[node name="world_environment" type="WorldEnvironment" parent="." unique_id=1550907294]
-environment = SubResource("Environment_mvhpe")
