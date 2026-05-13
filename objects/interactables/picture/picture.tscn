@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://dhf78wpxd1v14"]
+
+[ext_resource type="Script" uid="uid://bp187rfloyhev" path="res://objects/interactables/picture/picture.gd" id="1_8q5md"]
+[ext_resource type="Shader" uid="uid://lo61a63eib52" path="res://common/dissolve.gdshader" id="1_mnt3s"]
+[ext_resource type="Texture2D" uid="uid://bdy0co4faxns0" path="res://objects/interactables/picture/fake.png" id="2_hphtg"]
+[ext_resource type="Texture2D" uid="uid://mkmvpj17q6j8" path="res://objects/interactables/picture/real.png" id="3_8q5md"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_abn0t"]
+noise_type = 0
+frequency = 0.0476
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_5217j"]
+width = 32
+height = 32
+generate_mipmaps = false
+noise = SubResource("FastNoiseLite_abn0t")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_abn0t"]
+shader = ExtResource("1_mnt3s")
+shader_parameter/false_texture = ExtResource("2_hphtg")
+shader_parameter/true_texture = ExtResource("3_8q5md")
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_5217j")
+shader_parameter/progress = 0.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7th7e"]
+size = Vector2(66.62279, 68.36078)
+
+[node name="picture" type="Area2D" unique_id=1794519222]
+monitorable = false
+script = ExtResource("1_8q5md")
+
+[node name="texture" type="Sprite2D" parent="." unique_id=1402138239]
+texture_filter = 1
+material = SubResource("ShaderMaterial_abn0t")
+texture = ExtResource("2_hphtg")
+
+[node name="shape" type="CollisionShape2D" parent="." unique_id=2060898597]
+position = Vector2(0.41227722, 11.749188)
+shape = SubResource("RectangleShape2D_7th7e")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

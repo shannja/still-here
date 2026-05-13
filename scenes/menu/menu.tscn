@@ -53,6 +53,18 @@ tracks/2/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 1)]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("fade:color")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_3y2rt"]
 resource_name = "load"
@@ -93,10 +105,26 @@ tracks/2/keys = {
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 
+[sub_resource type="Animation" id="Animation_t0a87"]
+resource_name = "next_scene"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("fade:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_t0a87"]
 _data = {
 &"RESET": SubResource("Animation_r8yej"),
-&"load": SubResource("Animation_3y2rt")
+&"load": SubResource("Animation_3y2rt"),
+&"next_scene": SubResource("Animation_t0a87")
 }
 
 [sub_resource type="Gradient" id="Gradient_r8yej"]
@@ -472,4 +500,14 @@ texture_normal = SubResource("AtlasTexture_fstgh")
 texture_pressed = SubResource("AtlasTexture_wshxo")
 stretch_mode = 0
 
+[node name="fade" type="ColorRect" parent="." unique_id=586423190]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(1, 1, 1, 0)
+
 [connection signal="pressed" from="background/hero/affection" to="." method="_on_affection_pressed"]
+[connection signal="pressed" from="button_group/play" to="." method="_on_play_pressed"]

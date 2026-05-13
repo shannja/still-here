@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://61uqcuhpe50l"]
 
 [ext_resource type="Texture2D" uid="uid://byl77j6cpg54e" path="res://scenes/game/resources/apartment/doggie_bed.png" id="1_7h61r"]
+[ext_resource type="Script" uid="uid://bbbtbdkqbpndc" path="res://scenes/game/game.gd" id="1_3322e"]
 [ext_resource type="Texture2D" uid="uid://c3it824sv66eo" path="res://scenes/game/level/common/wall_4.png" id="1_kelw5"]
 [ext_resource type="PackedScene" uid="uid://baqrmmnubsqmd" path="res://objects/jasper/jasper.tscn" id="1_sul5r"]
 [ext_resource type="Texture2D" uid="uid://idcaxi0i2fka" path="res://scenes/game/resources/apartment/floor.png" id="2_0sr1o"]
@@ -40,6 +41,194 @@
 [ext_resource type="Texture2D" uid="uid://cyystj0txi5mf" path="res://scenes/game/resources/apartment/clock.png" id="36_5q2xh"]
 [ext_resource type="Texture2D" uid="uid://djt06ftu0unye" path="res://objects/sam/idle.png" id="36_6ehwc"]
 [ext_resource type="Texture2D" uid="uid://c6wfl4msk7ekp" path="res://scenes/game/resources/apartment/key_holder.png" id="37_sikks"]
+[ext_resource type="Texture2D" uid="uid://urbmxh7n6j21" path="res://scenes/game/resources/apartment/plates.png" id="41_t5owt"]
+[ext_resource type="Texture2D" uid="uid://dp2kopj3m5nb" path="res://scenes/game/resources/apartment/garbage.png" id="42_41gcl"]
+[ext_resource type="Texture2D" uid="uid://j5rq0kdoeqeh" path="res://scenes/game/resources/apartment/mugs.png" id="43_41gcl"]
+[ext_resource type="Texture2D" uid="uid://b8doas0g8idly" path="res://objects/sam/sitting_idle.png" id="43_teoly"]
+[ext_resource type="Texture2D" uid="uid://cqagv8x8u8alx" path="res://objects/sam/standing_up.png" id="44_b7fhm"]
+[ext_resource type="Texture2D" uid="uid://bwj4paxxttk2t" path="res://scenes/game/resources/apartment/typewriter.png" id="44_fba2n"]
+[ext_resource type="PackedScene" uid="uid://bvmns2guo3201" path="res://objects/interactables/cane/cane.tscn" id="46_i600x"]
+[ext_resource type="Texture2D" uid="uid://cr7cdu15igt6v" path="res://objects/sam/cane_idle.png" id="46_uw24m"]
+[ext_resource type="PackedScene" uid="uid://bytok61rjq5gc" path="res://objects/interactables/radio/radio.tscn" id="48_35t1a"]
+[ext_resource type="Texture2D" uid="uid://brog1s473w62v" path="res://objects/sam/walking.png" id="49_mge0u"]
+[ext_resource type="PackedScene" uid="uid://0vg8dp7gbbx3" path="res://objects/interactables/leash/leash.tscn" id="49_oepbe"]
+[ext_resource type="PackedScene" uid="uid://dhf78wpxd1v14" path="res://objects/interactables/picture/picture.tscn" id="49_ye7x0"]
+
+[sub_resource type="Animation" id="Animation_vbi6r"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("entities/people/sam:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(235.71043, 127.006165)]
+}
+
+[sub_resource type="Animation" id="Animation_qn4tv"]
+resource_name = "to_leash"
+length = 6.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("entities/people/sam:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5.9333334),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(344.48346, 127.006165), Vector2(434.39215, 127.006165)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("entities/people/sam/texture:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(5.9666667),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"to_idle"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_twah4"]
+resource_name = "to_picture"
+length = 13.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("entities/people/sam:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 13),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1.8839073, 127.006165), Vector2(344.48346, 127.006165)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("entities/people/sam/texture:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(13),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"to_idle"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_jiu3o"]
+resource_name = "to_radio"
+length = 13.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("entities/people/sam:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 13),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(235.71043, 127.006165), Vector2(1.8839073, 127.006165)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("entities/people/sam/texture:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(13),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"to_idle"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vbi6r"]
+_data = {
+&"RESET": SubResource("Animation_vbi6r"),
+&"to_leash": SubResource("Animation_qn4tv"),
+&"to_picture": SubResource("Animation_twah4"),
+&"to_radio": SubResource("Animation_jiu3o")
+}
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_jiu3o"]
+animation = &"to_leash"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_vbi6r"]
+animation = &"to_picture"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_twah4"]
+animation = &"to_radio"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_qn4tv"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_e3lpd"]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_au6n5"]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_uw24m"]
+states/Start/position = Vector2(108, 104.493835)
+states/to_leash/node = SubResource("AnimationNodeAnimation_jiu3o")
+states/to_leash/position = Vector2(714, 98.37038)
+states/to_picture/node = SubResource("AnimationNodeAnimation_vbi6r")
+states/to_picture/position = Vector2(538, 100.44445)
+states/to_radio/node = SubResource("AnimationNodeAnimation_twah4")
+states/to_radio/position = Vector2(391.3333, 98.66668)
+transitions = ["Start", "to_radio", SubResource("AnimationNodeStateMachineTransition_qn4tv"), "to_radio", "to_picture", SubResource("AnimationNodeStateMachineTransition_e3lpd"), "to_picture", "to_leash", SubResource("AnimationNodeStateMachineTransition_au6n5")]
 
 [sub_resource type="Environment" id="Environment_ifgtf"]
 background_mode = 3
@@ -50,20 +239,71 @@ glow_intensity = 0.5
 glow_bloom = 1.0
 adjustment_enabled = true
 
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_uw24m"]
+animation = &"cane_idle"
+
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_6ehwc"]
 animation = &"idle"
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_6ehwc"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_teoly"]
+animation = &"sitting_idle"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_b7fhm"]
+animation = &"standing_up"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_kuo75"]
+animation = &"walking"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_b7fhm"]
 advance_mode = 2
 
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_i600x"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_35t1a"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_jiu3o"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_vbi6r"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_uw24m"]
+
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_0gkf7"]
+states/End/position = Vector2(1065.3334, 99.308624)
+states/cane_idle/node = SubResource("AnimationNodeAnimation_uw24m")
+states/cane_idle/position = Vector2(632.98315, 93.21721)
 states/idle/node = SubResource("AnimationNodeAnimation_6ehwc")
-states/idle/position = Vector2(359.33334, 20.000008)
-transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_6ehwc")]
-graph_offset = Vector2(-19, -30)
+states/idle/position = Vector2(457.2593, -2.6666615)
+states/sitting_idle/node = SubResource("AnimationNodeAnimation_teoly")
+states/sitting_idle/position = Vector2(318.99997, 101.1111)
+states/standing_up/node = SubResource("AnimationNodeAnimation_b7fhm")
+states/standing_up/position = Vector2(457.56796, 99.69546)
+states/walking/node = SubResource("AnimationNodeAnimation_kuo75")
+states/walking/position = Vector2(798.3164, 92.13993)
+transitions = ["Start", "sitting_idle", SubResource("AnimationNodeStateMachineTransition_b7fhm"), "sitting_idle", "standing_up", SubResource("AnimationNodeStateMachineTransition_i600x"), "standing_up", "idle", SubResource("AnimationNodeStateMachineTransition_35t1a"), "idle", "cane_idle", SubResource("AnimationNodeStateMachineTransition_jiu3o"), "cane_idle", "walking", SubResource("AnimationNodeStateMachineTransition_vbi6r"), "walking", "cane_idle", SubResource("AnimationNodeStateMachineTransition_uw24m")]
+graph_offset = Vector2(121.64975, -50)
 
 [sub_resource type="Animation" id="Animation_tyhjx"]
 length = 0.001
+
+[sub_resource type="Animation" id="Animation_kuo75"]
+resource_name = "cane_idle"
+step = 1.0
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [&"cane_idle", 1.0, false],
+"method": &"play"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_6ehwc"]
 resource_name = "idle"
@@ -83,11 +323,84 @@ tracks/0/keys = {
 }]
 }
 
+[sub_resource type="Animation" id="Animation_teoly"]
+resource_name = "sitting_idle"
+length = 0.03333667
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [&"sitting_idle", 1.0, false],
+"method": &"play"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_b7fhm"]
+resource_name = "standing_up"
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [&"standing_up", 1.0, false],
+"method": &"play"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_uw24m"]
+resource_name = "walking"
+step = 1.0
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [&"walking", 1.0, false],
+"method": &"play"
+}]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_tyhjx"]
 _data = {
 &"RESET": SubResource("Animation_tyhjx"),
-&"idle": SubResource("Animation_6ehwc")
+&"cane_idle": SubResource("Animation_kuo75"),
+&"idle": SubResource("Animation_6ehwc"),
+&"sitting_idle": SubResource("Animation_teoly"),
+&"standing_up": SubResource("Animation_b7fhm"),
+&"walking": SubResource("Animation_uw24m")
 }
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0bk81"]
+atlas = ExtResource("46_uw24m")
+region = Rect2(0, 0, 64, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q8d8h"]
+atlas = ExtResource("46_uw24m")
+region = Rect2(64, 0, 64, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6o42e"]
+atlas = ExtResource("46_uw24m")
+region = Rect2(0, 96, 64, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rnb85"]
+atlas = ExtResource("46_uw24m")
+region = Rect2(64, 96, 64, 96)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tyhjx"]
 atlas = ExtResource("36_6ehwc")
@@ -113,8 +426,93 @@ region = Rect2(64, 96, 64, 96)
 atlas = ExtResource("36_6ehwc")
 region = Rect2(128, 96, 64, 96)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_b7fhm"]
+atlas = ExtResource("43_teoly")
+region = Rect2(0, 0, 64, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i600x"]
+atlas = ExtResource("43_teoly")
+region = Rect2(64, 0, 64, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_35t1a"]
+atlas = ExtResource("43_teoly")
+region = Rect2(128, 0, 64, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ye7x0"]
+atlas = ExtResource("43_teoly")
+region = Rect2(0, 96, 64, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oepbe"]
+atlas = ExtResource("43_teoly")
+region = Rect2(64, 96, 64, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3322e"]
+atlas = ExtResource("44_b7fhm")
+region = Rect2(0, 0, 64, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mge0u"]
+atlas = ExtResource("44_b7fhm")
+region = Rect2(64, 0, 64, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uw24m"]
+atlas = ExtResource("44_b7fhm")
+region = Rect2(128, 0, 64, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kuo75"]
+atlas = ExtResource("44_b7fhm")
+region = Rect2(0, 96, 64, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jiu3o"]
+atlas = ExtResource("44_b7fhm")
+region = Rect2(64, 96, 64, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vbi6r"]
+atlas = ExtResource("49_mge0u")
+region = Rect2(0, 0, 64, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_twah4"]
+atlas = ExtResource("49_mge0u")
+region = Rect2(64, 0, 64, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qn4tv"]
+atlas = ExtResource("49_mge0u")
+region = Rect2(128, 0, 64, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e3lpd"]
+atlas = ExtResource("49_mge0u")
+region = Rect2(192, 0, 64, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_au6n5"]
+atlas = ExtResource("49_mge0u")
+region = Rect2(0, 96, 64, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tcm0m"]
+atlas = ExtResource("49_mge0u")
+region = Rect2(64, 96, 64, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yy23q"]
+atlas = ExtResource("49_mge0u")
+region = Rect2(128, 96, 64, 96)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_0gkf7"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0bk81")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q8d8h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6o42e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rnb85")
+}],
+"loop": true,
+"name": &"cane_idle",
+"speed": 4.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_tyhjx")
@@ -136,6 +534,72 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b7fhm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i600x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_35t1a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ye7x0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oepbe")
+}],
+"loop": true,
+"name": &"sitting_idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3322e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mge0u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uw24m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kuo75")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jiu3o")
+}],
+"loop": false,
+"name": &"standing_up",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vbi6r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_twah4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qn4tv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e3lpd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_au6n5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tcm0m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yy23q")
+}],
+"loop": true,
+"name": &"walking",
 "speed": 5.0
 }]
 
@@ -178,7 +642,51 @@ polygon = PackedVector2Array(6.8671875, 109.99219, 54.46571, 109.99116, 54.46571
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_gc57s"]
 polygon = PackedVector2Array(6.802761, 110.254486, 54.46571, 109.99116, 54.21573, 142.57903, 6.5304413, 142.98012)
 
+[sub_resource type="Animation" id="Animation_oepbe"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ui/fade:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_3322e"]
+resource_name = "fade"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ui/fade:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mge0u"]
+_data = {
+&"RESET": SubResource("Animation_oepbe"),
+&"fade": SubResource("Animation_3322e")
+}
+
 [node name="game" type="Node" unique_id=1929238918]
+script = ExtResource("1_3322e")
+
+[node name="animation_player" type="AnimationPlayer" parent="." unique_id=938268004]
+libraries/ = SubResource("AnimationLibrary_vbi6r")
+
+[node name="animation_tree" type="AnimationTree" parent="." unique_id=1523124032]
+tree_root = SubResource("AnimationNodeStateMachine_uw24m")
+anim_player = NodePath("../animation_player")
 
 [node name="world_environment" type="WorldEnvironment" parent="." unique_id=83449452]
 environment = SubResource("Environment_ifgtf")
@@ -259,15 +767,15 @@ texture = ExtResource("8_4j704")
 [node name="furnitures" type="Node2D" parent="map" unique_id=210337772]
 
 [node name="dog_plate" type="Sprite2D" parent="map/furnitures" unique_id=1560808954]
-position = Vector2(367.6454, 171.00188)
+position = Vector2(127.6909, 171.00188)
 texture = ExtResource("7_1iff4")
 
 [node name="doggie_bed" type="Sprite2D" parent="map/furnitures" unique_id=1708039707]
-position = Vector2(172, 167)
+position = Vector2(183.14116, 167)
 texture = ExtResource("1_7h61r")
 
 [node name="table" type="Sprite2D" parent="map/furnitures" unique_id=1586912803]
-position = Vector2(129, 158)
+position = Vector2(345.9589, 158)
 texture = ExtResource("5_5i0tg")
 
 [node name="painting_2" type="Sprite2D" parent="map/furnitures" unique_id=1558586137]
@@ -300,7 +808,7 @@ position = Vector2(130.14583, 124.49125)
 texture = ExtResource("13_otnwt")
 
 [node name="hanging_shelf_2" type="Sprite2D" parent="map/furnitures" unique_id=2121786619]
-position = Vector2(284.1458, 101.98213)
+position = Vector2(284.1458, 103.9145)
 texture = ExtResource("13_otnwt")
 
 [node name="hanging_shelf_7" type="Sprite2D" parent="map/furnitures" unique_id=767293135]
@@ -312,21 +820,21 @@ position = Vector2(-42.24942, 101.98575)
 texture = ExtResource("13_otnwt")
 
 [node name="hanging_shelf_6" type="Sprite2D" parent="map/furnitures" unique_id=1688466988]
-position = Vector2(351.1458, 101.98213)
+position = Vector2(351.1458, 103.9145)
 texture = ExtResource("13_otnwt")
 
 [node name="hanging_shelf_3" type="Sprite2D" parent="map/furnitures" unique_id=556272633]
-position = Vector2(318.03656, 101.98213)
+position = Vector2(318.03656, 103.9145)
 texture = ExtResource("13_otnwt")
 
 [node name="plants_3" type="Sprite2D" parent="map/furnitures" unique_id=1394275979]
-position = Vector2(276.31003, 90.97536)
+position = Vector2(276.31003, 92.90772)
 texture = ExtResource("18_pg2xm")
 region_enabled = true
 region_rect = Rect2(0, 0, 9, 11)
 
 [node name="plants_4" type="Sprite2D" parent="map/furnitures" unique_id=649288245]
-position = Vector2(316.8679, 91.124)
+position = Vector2(316.8679, 93.056366)
 texture = ExtResource("18_pg2xm")
 region_enabled = true
 region_rect = Rect2(17, 0, 7, 11)
@@ -343,8 +851,14 @@ texture = ExtResource("18_pg2xm")
 region_enabled = true
 region_rect = Rect2(24, 0, 8, 11)
 
+[node name="plants_7" type="Sprite2D" parent="map/furnitures" unique_id=194236026]
+position = Vector2(354.91855, 78.69658)
+texture = ExtResource("18_pg2xm")
+region_enabled = true
+region_rect = Rect2(24, 0, 8, 11)
+
 [node name="pictures_2" type="Sprite2D" parent="map/furnitures" unique_id=1721480885]
-position = Vector2(289.91968, 92.04807)
+position = Vector2(289.91968, 93.98044)
 texture = ExtResource("19_10c2w")
 region_enabled = true
 region_rect = Rect2(12, 0, 13, 11)
@@ -374,7 +888,6 @@ region_enabled = true
 region_rect = Rect2(0, 16, 14, 13)
 
 [node name="shade" type="Sprite2D" parent="map/furnitures/lamp" unique_id=397773178]
-modulate = Color(1, 1, 1, 0.7019608)
 position = Vector2(0, -14.552216)
 texture = ExtResource("18_10c2w")
 region_enabled = true
@@ -397,16 +910,25 @@ position = Vector2(-46.1136, 150.45921)
 texture = ExtResource("20_8b66f")
 
 [node name="painting_4" type="Sprite2D" parent="map/furnitures" unique_id=190476893]
-position = Vector2(336.11368, 130.57504)
+position = Vector2(387.9868, 93.42269)
 texture = ExtResource("24_wdnak")
 
 [node name="painting_5" type="Sprite2D" parent="map/furnitures" unique_id=1405431992]
 position = Vector2(139.05417, 114.509514)
 texture = ExtResource("25_fty5b")
 
+[node name="painting_7" type="Sprite2D" parent="map/furnitures" unique_id=1731204541]
+position = Vector2(344.13846, 79.441086)
+texture = ExtResource("25_fty5b")
+
 [node name="books_2" type="Sprite2D" parent="map/furnitures" unique_id=1473312921]
 position = Vector2(308.278, 79.4741)
 texture = ExtResource("28_l2dhg")
+
+[node name="books_3" type="Sprite2D" parent="map/furnitures" unique_id=1149065022]
+position = Vector2(328.99042, 79.4106)
+texture = ExtResource("28_l2dhg")
+flip_h = true
 
 [node name="vase" type="Sprite2D" parent="map/furnitures" unique_id=701754686]
 position = Vector2(473.64093, 158.9774)
@@ -453,34 +975,93 @@ position = Vector2(182.40443, 57.485546)
 texture = ExtResource("36_5q2xh")
 
 [node name="key_holder" type="Sprite2D" parent="map/furnitures" unique_id=627753471]
-position = Vector2(388.85355, 107.80756)
+position = Vector2(388.85355, 131.99164)
 texture = ExtResource("37_sikks")
 
-[node name="glow_layer" type="CanvasLayer" parent="." unique_id=739427107]
+[node name="plates" type="Sprite2D" parent="map/furnitures" unique_id=1410083650]
+position = Vector2(-46.29779, 118.096375)
+texture = ExtResource("41_t5owt")
+
+[node name="garbage" type="Sprite2D" parent="map/furnitures" unique_id=924939129]
+position = Vector2(397.0636, 164.89067)
+texture = ExtResource("42_41gcl")
+
+[node name="mugs" type="Sprite2D" parent="map/furnitures" unique_id=1129346646]
+position = Vector2(-42.235104, 91.96372)
+texture = ExtResource("43_41gcl")
+region_enabled = true
+region_rect = Rect2(0, 0, 36, 9)
+
+[node name="mugs_3" type="Sprite2D" parent="map/furnitures" unique_id=910042809]
+position = Vector2(-11.473778, 123.709816)
+texture = ExtResource("43_41gcl")
+region_enabled = true
+region_rect = Rect2(24, 0, 12, 9)
+
+[node name="particles" type="CPUParticles2D" parent="map/furnitures/mugs_3" unique_id=877776118]
+position = Vector2(-0.2865429, -3.4958267)
+lifetime = 1.5
+emission_shape = 3
+emission_rect_extents = Vector2(3, 1)
+spread = 180.0
+gravity = Vector2(0, -4)
+angular_velocity_min = -9.6
+scale_amount_min = 0.5
+scale_amount_max = 2.0
+
+[node name="mugs_2" type="Sprite2D" parent="map/furnitures" unique_id=1679195425]
+position = Vector2(-10.258978, 91.96372)
+texture = ExtResource("43_41gcl")
+region_enabled = true
+region_rect = Rect2(36, 0, 12, 9)
+
+[node name="mugs_4" type="Sprite2D" parent="map/furnitures" unique_id=1307090994]
+position = Vector2(298.39908, 136.57782)
+texture = ExtResource("43_41gcl")
+region_enabled = true
+region_rect = Rect2(36, 0, 12, 9)
+
+[node name="typewriter" type="Sprite2D" parent="map/furnitures" unique_id=1361597616]
+position = Vector2(351.24994, 92.91894)
+texture = ExtResource("44_fba2n")
+
+[node name="entities" type="CanvasLayer" parent="." unique_id=739427107]
 layer = 2
 follow_viewport_enabled = true
 
-[node name="player" type="Node2D" parent="glow_layer" unique_id=828675757]
+[node name="radio" parent="entities" unique_id=1701716172 instance=ExtResource("48_35t1a")]
+position = Vector2(7.4778347, 120.214134)
+scale = Vector2(0.5, 0.5)
 
-[node name="sam" type="Node2D" parent="glow_layer/player" unique_id=475929977]
+[node name="picture" parent="entities" unique_id=69366423 instance=ExtResource("49_ye7x0")]
+position = Vector2(346.2225, 127.2005)
 
-[node name="animation_tree" type="AnimationTree" parent="glow_layer/player/sam" unique_id=1066791190]
+[node name="cane" parent="entities" unique_id=1794519222 instance=ExtResource("46_i600x")]
+position = Vector2(256.56088, 150.9716)
+
+[node name="leash" parent="entities" unique_id=1091819416 instance=ExtResource("49_oepbe")]
+position = Vector2(434.6399, 107.537834)
+
+[node name="people" type="Node2D" parent="entities" unique_id=828675757]
+
+[node name="sam" type="Node2D" parent="entities/people" unique_id=475929977]
+position = Vector2(235.71043, 127.006165)
+
+[node name="animation_tree" type="AnimationTree" parent="entities/people/sam" unique_id=1066791190]
 tree_root = SubResource("AnimationNodeStateMachine_0gkf7")
 anim_player = NodePath("../animation_player")
 
-[node name="animation_player" type="AnimationPlayer" parent="glow_layer/player/sam" unique_id=1582538022]
+[node name="animation_player" type="AnimationPlayer" parent="entities/people/sam" unique_id=1582538022]
 libraries/ = SubResource("AnimationLibrary_tyhjx")
 
-[node name="texture" type="AnimatedSprite2D" parent="glow_layer/player/sam" unique_id=1996419929]
-position = Vector2(245.3816, 125.99814)
+[node name="texture" type="AnimatedSprite2D" parent="entities/people/sam" unique_id=1996419929]
 sprite_frames = SubResource("SpriteFrames_0gkf7")
 animation = &"idle"
-frame_progress = 0.58599806
 
-[node name="jasper" parent="glow_layer/player" unique_id=246550592 instance=ExtResource("1_sul5r")]
-position = Vector2(170.18494, 158)
+[node name="jasper" parent="entities/people" unique_id=246550592 instance=ExtResource("1_sul5r")]
+position = Vector2(183.3515, 158)
 
-[node name="camera" type="Camera2D" parent="glow_layer/player/jasper" unique_id=292221366]
+[node name="camera" type="Camera2D" parent="entities/people/jasper" unique_id=292221366]
 position = Vector2(0, -47.995934)
 zoom = Vector2(1.3, 1.3)
 limit_left = -66
@@ -490,11 +1071,6 @@ limit_bottom = 181
 limit_smoothed = true
 position_smoothing_enabled = true
 position_smoothing_speed = 2.0
-
-[node name="test_camera" type="Camera2D" parent="glow_layer" unique_id=1428354163]
-position = Vector2(215.80835, 107.90419)
-enabled = false
-zoom = Vector2(0.565, 0.565)
 
 [node name="colliders" type="StaticBody2D" parent="." unique_id=1755324861]
 
@@ -590,7 +1166,7 @@ occluder = SubResource("OccluderPolygon2D_5v6r0")
 metadata/_edit_lock_ = true
 
 [node name="hanging_shelf_2" type="LightOccluder2D" parent="lighting" unique_id=1289032749]
-position = Vector2(192, -24.52826)
+position = Vector2(192, -22.595894)
 occluder = SubResource("OccluderPolygon2D_5v6r0")
 metadata/_edit_lock_ = true
 
@@ -610,12 +1186,12 @@ occluder = SubResource("OccluderPolygon2D_10c2w")
 metadata/_edit_lock_ = true
 
 [node name="hanging_shelf_4" type="LightOccluder2D" parent="lighting" unique_id=391798932]
-position = Vector2(259, -24.52826)
+position = Vector2(259, -22.594292)
 occluder = SubResource("OccluderPolygon2D_5v6r0")
 metadata/_edit_lock_ = true
 
 [node name="hanging_shelf_3" type="LightOccluder2D" parent="lighting" unique_id=2120007974]
-position = Vector2(225.89072, -24.638283)
+position = Vector2(225.89072, -22.705917)
 occluder = SubResource("OccluderPolygon2D_5v6r0")
 metadata/_edit_lock_ = true
 
@@ -625,7 +1201,7 @@ occluder = SubResource("OccluderPolygon2D_uyinl")
 metadata/_edit_lock_ = true
 
 [node name="pot_2" type="LightOccluder2D" parent="lighting" unique_id=1155150273]
-position = Vector2(193.33476, -24.52826)
+position = Vector2(193.33476, -22.595894)
 occluder = SubResource("OccluderPolygon2D_uyinl")
 metadata/_edit_lock_ = true
 
@@ -636,7 +1212,7 @@ occluder = SubResource("OccluderPolygon2D_3jaai")
 metadata/_edit_lock_ = true
 
 [node name="pot_3" type="LightOccluder2D" parent="lighting" unique_id=981295127]
-position = Vector2(234, -24.515152)
+position = Vector2(234, -22.582787)
 occluder = SubResource("OccluderPolygon2D_uyinl")
 metadata/_edit_lock_ = true
 
@@ -654,3 +1230,38 @@ metadata/_edit_lock_ = true
 position = Vector2(260.78836, 31.125137)
 occluder = SubResource("OccluderPolygon2D_gc57s")
 metadata/_edit_lock_ = true
+
+[node name="test_camera" type="Camera2D" parent="." unique_id=1428354163]
+position = Vector2(215.80835, 107.90419)
+enabled = false
+zoom = Vector2(0.565, 0.565)
+
+[node name="ui" type="CanvasLayer" parent="." unique_id=1532762219]
+layer = 2
+visible = false
+
+[node name="fade" type="ColorRect" parent="ui" unique_id=1186861957]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="dialog" type="Label" parent="ui" unique_id=768449210]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -34.196167
+offset_right = 20.0
+offset_bottom = -11.196167
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="animation_player" type="AnimationPlayer" parent="ui" unique_id=1597591247]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_mge0u")
+autoplay = &"fade"

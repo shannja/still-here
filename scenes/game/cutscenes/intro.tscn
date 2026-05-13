@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://deb34t11xfid4"]
+
+[ext_resource type="Script" uid="uid://nu8d20nixt1l" path="res://scenes/game/cutscenes/intro.gd" id="1_puk53"]
+
+[node name="intro" type="Node" unique_id=733655987]
+script = ExtResource("1_puk53")

@@ -1,6 +1,9 @@
 extends CharacterBody2D
+class_name Player
 
 @export var SPEED = 35.0
+
+var is_barking: bool = false
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -17,5 +20,11 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		$texture.play("idle")
-
+	
 	move_and_slide()
+
+func _input(_event: InputEvent) -> void:
+	if Input.is_action_just_pressed("bark"):
+		is_barking = true
+	elif Input.is_action_just_released("bark"):
+		is_barking = false
