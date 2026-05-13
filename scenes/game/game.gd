@@ -11,6 +11,8 @@ var leash_revealed: bool = false
 @onready var game: AnimationTree = $animation_tree
 @onready var game_anim: AnimationPlayer = $animation_player
 @onready var game_state: AnimationNodeStateMachinePlayback = game.get("parameters/playback")
+@onready var dialog_tree: AnimationTree = $ui/dialog_animation_tree
+@onready var dialog_state: AnimationNodeStateMachinePlayback = dialog_tree.get("parameters/playback")
 
 func _ready() -> void:
 	$entities/cane.connect("revealed", Callable(self, "cane"))
@@ -20,9 +22,7 @@ func _ready() -> void:
 	
 	# lock everything except cane at start
 	_lock_all()
-	await get_tree().create_timer(1).timeout
-	$entities/cane.can_reveal = true
-	sam_state.travel("standing_up")
+	
 
 func _lock_all() -> void:
 	$entities/cane.can_reveal = false
@@ -34,24 +34,28 @@ func cane() -> void:
 	cane_revealed = true
 	$entities/cane.hide()
 	sam_state.travel("cane_idle")
+	dialog_state.travel("cane")
 	to_next()
 
 func radio() -> void:
 	radio_revealed = true
 	sam_state.travel("walking")
 	game_state.travel("to_radio")
+	dialog_state.travel("radio")
 	# unlock picture called from animation via to_next()
 
 func picture() -> void:
 	picture_revealed = true
 	sam_state.travel("walking")
 	game_state.travel("to_picture")
+	dialog_state.travel("picture")
 	# unlock leash called from animation via to_next()
 
 func leash() -> void:
 	leash_revealed = true
 	sam_state.travel("walking")
 	game_state.travel("to_leash")
+	dialog_state.travel("leash")
 
 # called by animation at the END of each sequence
 # this is the unlock gate — animation decides when next item is ready
@@ -64,6 +68,11 @@ func to_next() -> void:
 		
 	elif picture_revealed and not leash_revealed:
 		$entities/leash.can_reveal = true
+
+func to_cane() -> void:
+	$entities/cane.can_reveal = true
+	$entities/people/jasper.process_mode = Node.PROCESS_MODE_INHERIT
+	sam_state.travel("standing_up")
 
 func to_idle() -> void:
 	sam_state.travel("cane_idle")

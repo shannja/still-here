@@ -1,3 +1,13 @@
 [gd_scene format=3 uid="uid://ct3v2iovk8e0f"]
 
+[sub_resource type="Environment" id="Environment_5rvr2"]
+background_mode = 3
+glow_enabled = true
+glow_intensity = 0.5
+glow_bloom = 1.0
+adjustment_enabled = true
+
 [node name="outro" type="Node" unique_id=295333874]
+
+[node name="world_environment" type="WorldEnvironment" parent="." unique_id=117104216]
+environment = SubResource("Environment_5rvr2")

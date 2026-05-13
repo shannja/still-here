@@ -53,6 +53,7 @@
 [ext_resource type="Texture2D" uid="uid://brog1s473w62v" path="res://objects/sam/walking.png" id="49_mge0u"]
 [ext_resource type="PackedScene" uid="uid://0vg8dp7gbbx3" path="res://objects/interactables/leash/leash.tscn" id="49_oepbe"]
 [ext_resource type="PackedScene" uid="uid://dhf78wpxd1v14" path="res://objects/interactables/picture/picture.tscn" id="49_ye7x0"]
+[ext_resource type="FontFile" uid="uid://df8e6n18a8wa2" path="res://common/Pixelify_Sans/static/PixelifySans-Regular.ttf" id="54_kuo75"]
 
 [sub_resource type="Animation" id="Animation_vbi6r"]
 length = 0.001
@@ -684,6 +685,16 @@ polygon = PackedVector2Array(6.8671875, 109.99219, 54.46571, 109.99116, 54.46571
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_gc57s"]
 polygon = PackedVector2Array(6.802761, 110.254486, 54.46571, 109.99116, 54.21573, 142.57903, 6.5304413, 142.98012)
 
+[sub_resource type="Gradient" id="Gradient_uw24m"]
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_kuo75"]
+gradient = SubResource("Gradient_uw24m")
+width = 512
+height = 512
+fill_from = Vector2(1, 1)
+fill_to = Vector2(1, 0.4738372)
+
 [sub_resource type="Animation" id="Animation_oepbe"]
 length = 0.001
 tracks/0/type = "value"
@@ -719,6 +730,1029 @@ _data = {
 &"RESET": SubResource("Animation_oepbe"),
 &"fade": SubResource("Animation_3322e")
 }
+
+[sub_resource type="Animation" id="Animation_au6n5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("dialog_fade:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("dialog:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("dialog:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [""]
+}
+
+[sub_resource type="Animation" id="Animation_tcm0m"]
+resource_name = "dialog_1"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("dialog_fade:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6666667, 4.2333336, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("dialog:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.70000005, 4.2333336, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("dialog:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["I guess I am going to forget things..."]
+}
+
+[sub_resource type="Animation" id="Animation_864w3"]
+resource_name = "dialog_11"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("dialog_fade:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6666667, 4.2333336, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("dialog:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.70000005, 4.2333336, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("dialog:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(-0.033333335),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Forty years. Same station. I still don't know half the words."]
+}
+
+[sub_resource type="Animation" id="Animation_5dkr6"]
+resource_name = "dialog_12"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("dialog_fade:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6666667, 4.2333336, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("dialog:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.70000005, 4.2333336, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("dialog:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(-0.033333335),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["I always touch the frame on my way past."]
+}
+
+[sub_resource type="Animation" id="Animation_bjk8q"]
+resource_name = "dialog_13"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("dialog_fade:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6666667, 4.2333336, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("dialog:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.70000005, 4.2333336, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("dialog:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(-0.033333335),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["I always touch our frame on my way past. I can't seem to remember where it is."]
+}
+
+[sub_resource type="Animation" id="Animation_bf22m"]
+resource_name = "dialog_14"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("dialog_fade:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6666667, 4.2333336, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("dialog:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.70000005, 4.2333336, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("dialog:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(-0.033333335),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["I remember when we visited the garden of roses. She liked roses."]
+}
+
+[sub_resource type="Animation" id="Animation_3f8qr"]
+resource_name = "dialog_16"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("dialog_fade:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6666667, 4.2333336, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("dialog:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.70000005, 4.2333336, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("dialog:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(-0.033333335),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Alrighty. Now we have to go outside now. You're awfully quiet today boy."]
+}
+
+[sub_resource type="Animation" id="Animation_gsju6"]
+resource_name = "dialog_17"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("dialog_fade:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6666667, 4.2333336, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("dialog:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.70000005, 4.2333336, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("dialog:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(-0.033333335),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Where could your leash be. I feel I am misplacing something."]
+}
+
+[sub_resource type="Animation" id="Animation_yy23q"]
+resource_name = "dialog_2"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("dialog_fade:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6666667, 4.2333336, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("dialog:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.70000005, 4.2333336, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("dialog:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["I don't really care. I am blind for almost fifteen years."]
+}
+
+[sub_resource type="Animation" id="Animation_0bk81"]
+resource_name = "dialog_3"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("dialog_fade:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6666667, 4.2333336, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("dialog:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.70000005, 4.2333336, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("dialog:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["What am I gonna forget? That I'm blind? HAHAHA"]
+}
+
+[sub_resource type="Animation" id="Animation_q8d8h"]
+resource_name = "dialog_4"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("dialog_fade:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6666667, 4.2333336, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("dialog:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.70000005, 4.2333336, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("dialog:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Now, where did I put my cane... Swear I just felt it here."]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("..")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"to_cane"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_6o42e"]
+resource_name = "dialog_5"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("dialog_fade:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6666667, 4.2333336, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("dialog:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.70000005, 4.2333336, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("dialog:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["This umbrella is misplaced, I must move it after finding my cane."]
+}
+
+[sub_resource type="Animation" id="Animation_7dxef"]
+resource_name = "dialog_7"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("dialog_fade:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6666667, 4.2333336, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("dialog:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.70000005, 4.2333336, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("dialog:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Come on Jasper, tap tap. You know the drill."]
+}
+
+[sub_resource type="Animation" id="Animation_1s0gc"]
+resource_name = "dialog_8"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("dialog_fade:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6666667, 4.2333336, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("dialog:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.70000005, 4.2333336, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("dialog:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Radio first. Always radio first, before my coffee, right Jasper?"]
+}
+
+[sub_resource type="Animation" id="Animation_84b8o"]
+resource_name = "dialog_9"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("dialog_fade:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6666667, 4.2333336, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("dialog:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.70000005, 4.2333336, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("dialog:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(-0.033333335),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["...It's quiet. Something's not right. I can't hear it."]
+}
+
+[sub_resource type="Animation" id="Animation_g2bdr"]
+resource_name = "g_dialog_10"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("dialog_fade:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6666667, 4.2333336, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("dialog:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.70000005, 4.2333336, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("dialog:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["There we go. Tuesday doesn't start without this."]
+}
+
+[sub_resource type="Animation" id="Animation_tcv87"]
+resource_name = "g_dialog_15"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("dialog_fade:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6666667, 4.2333336, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("dialog:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.70000005, 4.2333336, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("dialog:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["There she is."]
+}
+
+[sub_resource type="Animation" id="Animation_yegcf"]
+resource_name = "g_dialog_18"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("dialog_fade:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6666667, 4.2333336, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("dialog:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.70000005, 4.2333336, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("dialog:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Ah. I remember now. Come on, Jasper. Good boy.
+"]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("..")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"outro"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_rnb85"]
+resource_name = "g_dialog_6"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("dialog_fade:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6666667, 4.2333336, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("dialog:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.70000005, 4.2333336, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("dialog:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["There it is. Knew it was around here somewhere."]
+}
+
+[sub_resource type="Animation" id="Animation_e3lpd"]
+resource_name = "intro"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("dialog_fade:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6666667, 4.2333336, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("dialog:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.70000005, 4.2333336, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("dialog:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Dementia, huh?"]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_au6n5"]
+_data = {
+&"RESET": SubResource("Animation_au6n5"),
+&"dialog_1": SubResource("Animation_tcm0m"),
+&"dialog_11": SubResource("Animation_864w3"),
+&"dialog_12": SubResource("Animation_5dkr6"),
+&"dialog_13": SubResource("Animation_bjk8q"),
+&"dialog_14": SubResource("Animation_bf22m"),
+&"dialog_16": SubResource("Animation_3f8qr"),
+&"dialog_17": SubResource("Animation_gsju6"),
+&"dialog_2": SubResource("Animation_yy23q"),
+&"dialog_3": SubResource("Animation_0bk81"),
+&"dialog_4": SubResource("Animation_q8d8h"),
+&"dialog_5": SubResource("Animation_6o42e"),
+&"dialog_7": SubResource("Animation_7dxef"),
+&"dialog_8": SubResource("Animation_1s0gc"),
+&"dialog_9": SubResource("Animation_84b8o"),
+&"g_dialog_10": SubResource("Animation_g2bdr"),
+&"g_dialog_15": SubResource("Animation_tcv87"),
+&"g_dialog_18": SubResource("Animation_yegcf"),
+&"g_dialog_6": SubResource("Animation_rnb85"),
+&"intro": SubResource("Animation_e3lpd")
+}
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_q8d8h"]
+animation = &"g_dialog_6"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_e3lpd"]
+animation = &"dialog_1"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_84b8o"]
+animation = &"dialog_11"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_g2bdr"]
+animation = &"dialog_12"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_864w3"]
+animation = &"dialog_13"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_5dkr6"]
+animation = &"dialog_14"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_bf22m"]
+animation = &"dialog_16"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_tcv87"]
+animation = &"dialog_17"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_au6n5"]
+animation = &"dialog_2"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_tcm0m"]
+animation = &"dialog_3"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_yy23q"]
+animation = &"dialog_4"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_0bk81"]
+animation = &"dialog_5"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_6o42e"]
+animation = &"dialog_7"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_rnb85"]
+animation = &"dialog_8"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_7dxef"]
+animation = &"dialog_9"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_qn4tv"]
+animation = &"intro"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_3f8qr"]
+animation = &"g_dialog_18"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_bjk8q"]
+animation = &"g_dialog_15"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_1s0gc"]
+animation = &"g_dialog_10"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_tcm0m"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_yy23q"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_0bk81"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_q8d8h"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_6o42e"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_rnb85"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_7dxef"]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_1s0gc"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_84b8o"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_g2bdr"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_864w3"]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_bf22m"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_tcv87"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_3f8qr"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_gsju6"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_yegcf"]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_0lksv"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_hqxe5"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_472nx"]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_kuo75"]
+states/End/position = Vector2(471.55557, 47.133068)
+states/cane/node = SubResource("AnimationNodeAnimation_q8d8h")
+states/cane/position = Vector2(1088.4376, 113.62964)
+states/dialog_1/node = SubResource("AnimationNodeAnimation_e3lpd")
+states/dialog_1/position = Vector2(470, 121.333336)
+states/dialog_11/node = SubResource("AnimationNodeAnimation_84b8o")
+states/dialog_11/position = Vector2(1764.3633, 131.66666)
+states/dialog_12/node = SubResource("AnimationNodeAnimation_g2bdr")
+states/dialog_12/position = Vector2(1845.6965, 105)
+states/dialog_13/node = SubResource("AnimationNodeAnimation_864w3")
+states/dialog_13/position = Vector2(1968.3633, 129)
+states/dialog_14/node = SubResource("AnimationNodeAnimation_5dkr6")
+states/dialog_14/position = Vector2(2088.3633, 118.333336)
+states/dialog_16/node = SubResource("AnimationNodeAnimation_bf22m")
+states/dialog_16/position = Vector2(2366.1667, 112)
+states/dialog_17/node = SubResource("AnimationNodeAnimation_tcv87")
+states/dialog_17/position = Vector2(2512.226, 138.66667)
+states/dialog_2/node = SubResource("AnimationNodeAnimation_au6n5")
+states/dialog_2/position = Vector2(580.6667, 121.333336)
+states/dialog_3/node = SubResource("AnimationNodeAnimation_tcm0m")
+states/dialog_3/position = Vector2(702, 118.66667)
+states/dialog_4/node = SubResource("AnimationNodeAnimation_yy23q")
+states/dialog_4/position = Vector2(828, 112.66668)
+states/dialog_5/node = SubResource("AnimationNodeAnimation_0bk81")
+states/dialog_5/position = Vector2(945.1043, 114.11113)
+states/dialog_7/node = SubResource("AnimationNodeAnimation_6o42e")
+states/dialog_7/position = Vector2(1243.1042, 114.419716)
+states/dialog_8/node = SubResource("AnimationNodeAnimation_rnb85")
+states/dialog_8/position = Vector2(1383.3632, 122)
+states/dialog_9/node = SubResource("AnimationNodeAnimation_7dxef")
+states/dialog_9/position = Vector2(1529.3632, 130)
+states/intro/node = SubResource("AnimationNodeAnimation_qn4tv")
+states/intro/position = Vector2(366, 122.666664)
+states/leash/node = SubResource("AnimationNodeAnimation_3f8qr")
+states/leash/position = Vector2(2742.4485, 116.88888)
+states/picture/node = SubResource("AnimationNodeAnimation_bjk8q")
+states/picture/position = Vector2(2236.363, 121.44448)
+states/radio/node = SubResource("AnimationNodeAnimation_1s0gc")
+states/radio/position = Vector2(1657.3632, 133.11108)
+transitions = ["Start", "intro", SubResource("AnimationNodeStateMachineTransition_tcm0m"), "intro", "dialog_1", SubResource("AnimationNodeStateMachineTransition_yy23q"), "dialog_1", "dialog_2", SubResource("AnimationNodeStateMachineTransition_0bk81"), "dialog_2", "dialog_3", SubResource("AnimationNodeStateMachineTransition_q8d8h"), "dialog_3", "dialog_4", SubResource("AnimationNodeStateMachineTransition_6o42e"), "dialog_4", "dialog_5", SubResource("AnimationNodeStateMachineTransition_rnb85"), "dialog_5", "cane", SubResource("AnimationNodeStateMachineTransition_7dxef"), "cane", "dialog_7", SubResource("AnimationNodeStateMachineTransition_1s0gc"), "dialog_7", "dialog_8", SubResource("AnimationNodeStateMachineTransition_84b8o"), "dialog_8", "dialog_9", SubResource("AnimationNodeStateMachineTransition_g2bdr"), "dialog_9", "radio", SubResource("AnimationNodeStateMachineTransition_864w3"), "radio", "dialog_11", SubResource("AnimationNodeStateMachineTransition_bf22m"), "dialog_11", "dialog_12", SubResource("AnimationNodeStateMachineTransition_tcv87"), "dialog_12", "dialog_13", SubResource("AnimationNodeStateMachineTransition_3f8qr"), "dialog_13", "dialog_14", SubResource("AnimationNodeStateMachineTransition_gsju6"), "dialog_14", "picture", SubResource("AnimationNodeStateMachineTransition_yegcf"), "picture", "dialog_16", SubResource("AnimationNodeStateMachineTransition_0lksv"), "dialog_16", "dialog_17", SubResource("AnimationNodeStateMachineTransition_hqxe5"), "dialog_17", "leash", SubResource("AnimationNodeStateMachineTransition_472nx")]
+graph_offset = Vector2(1811.2212, 4)
 
 [node name="game" type="Node" unique_id=1929238918]
 script = ExtResource("1_3322e")
@@ -1098,7 +2132,7 @@ libraries/ = SubResource("AnimationLibrary_tyhjx")
 
 [node name="texture" type="AnimatedSprite2D" parent="entities/people/sam" unique_id=1996419929]
 sprite_frames = SubResource("SpriteFrames_0gkf7")
-animation = &"idle"
+animation = &"sitting_idle"
 
 [node name="jasper" parent="entities/people" unique_id=246550592 instance=ExtResource("1_sul5r")]
 position = Vector2(183.3515, 158)
@@ -1289,20 +2323,40 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
+[node name="dialog_fade" type="TextureRect" parent="ui" unique_id=727261678]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_kuo75")
+expand_mode = 1
+
 [node name="dialog" type="Label" parent="ui" unique_id=768449210]
+modulate = Color(1, 1, 1, 0)
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -20.0
-offset_top = -34.196167
-offset_right = 20.0
+offset_left = -37.5
+offset_top = -24.196167
+offset_right = 37.5
 offset_bottom = -11.196167
 grow_horizontal = 2
 grow_vertical = 0
+theme_override_fonts/font = ExtResource("54_kuo75")
+theme_override_font_sizes/font_size = 7
 
 [node name="animation_player" type="AnimationPlayer" parent="ui" unique_id=1597591247]
 root_node = NodePath("../..")
 libraries/ = SubResource("AnimationLibrary_mge0u")
 autoplay = &"fade"
+
+[node name="dialog_animation_player" type="AnimationPlayer" parent="ui" unique_id=1341779084]
+libraries/ = SubResource("AnimationLibrary_au6n5")
+
+[node name="dialog_animation_tree" type="AnimationTree" parent="ui" unique_id=714239743]
+tree_root = SubResource("AnimationNodeStateMachine_kuo75")
+anim_player = NodePath("../dialog_animation_player")
