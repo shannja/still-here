@@ -54,6 +54,7 @@
 [ext_resource type="PackedScene" uid="uid://0vg8dp7gbbx3" path="res://objects/interactables/leash/leash.tscn" id="49_oepbe"]
 [ext_resource type="PackedScene" uid="uid://dhf78wpxd1v14" path="res://objects/interactables/picture/picture.tscn" id="49_ye7x0"]
 [ext_resource type="FontFile" uid="uid://df8e6n18a8wa2" path="res://common/Pixelify_Sans/static/PixelifySans-Regular.ttf" id="54_kuo75"]
+[ext_resource type="AudioStream" uid="uid://cus0iqpbcw4he" path="res://common/818414__collectionofmemories__vintage-piano-jazz.wav" id="55_jiu3o"]
 
 [sub_resource type="Animation" id="Animation_vbi6r"]
 length = 0.001
@@ -685,11 +686,11 @@ polygon = PackedVector2Array(6.8671875, 109.99219, 54.46571, 109.99116, 54.46571
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_gc57s"]
 polygon = PackedVector2Array(6.802761, 110.254486, 54.46571, 109.99116, 54.21573, 142.57903, 6.5304413, 142.98012)
 
-[sub_resource type="Gradient" id="Gradient_uw24m"]
+[sub_resource type="Gradient" id="Gradient_vbi6r"]
 colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 0)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_kuo75"]
-gradient = SubResource("Gradient_uw24m")
+gradient = SubResource("Gradient_vbi6r")
 width = 512
 height = 512
 fill_from = Vector2(1, 1)
@@ -2360,3 +2361,8 @@ libraries/ = SubResource("AnimationLibrary_au6n5")
 [node name="dialog_animation_tree" type="AnimationTree" parent="ui" unique_id=714239743]
 tree_root = SubResource("AnimationNodeStateMachine_kuo75")
 anim_player = NodePath("../dialog_animation_player")
+
+[node name="bgm" type="AudioStreamPlayer" parent="." unique_id=54113646]
+stream = ExtResource("55_jiu3o")
+volume_db = -15.0
+autoplay = true

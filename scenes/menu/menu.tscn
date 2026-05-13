@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://lji1qickjtgd" path="res://scenes/menu/resources/idle.png" id="4_r8yej"]
 [ext_resource type="Texture2D" uid="uid://bgticiv44jbrk" path="res://scenes/menu/resources/logo.png" id="5_y1o0p"]
 [ext_resource type="Texture2D" uid="uid://b1e3x6t2y7b7o" path="res://scenes/menu/resources/button.png" id="7_3y2rt"]
+[ext_resource type="AudioStream" uid="uid://cus0iqpbcw4he" path="res://common/818414__collectionofmemories__vintage-piano-jazz.wav" id="8_t0a87"]
 
 [sub_resource type="Environment" id="Environment_r8yej"]
 background_mode = 3
@@ -366,14 +367,6 @@ region = Rect2(0, 0, 24, 24)
 atlas = ExtResource("7_3y2rt")
 region = Rect2(24, 0, 24, 24)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_fqr1d"]
-atlas = ExtResource("7_3y2rt")
-region = Rect2(0, 25, 12, 12)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_gxxro"]
-atlas = ExtResource("7_3y2rt")
-region = Rect2(0, 36, 12, 12)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_fstgh"]
 atlas = ExtResource("7_3y2rt")
 region = Rect2(13, 25, 9, 11)
@@ -468,30 +461,15 @@ texture_normal = SubResource("AtlasTexture_4xbh2")
 texture_pressed = SubResource("AtlasTexture_2rjk0")
 stretch_mode = 0
 
-[node name="sound" type="TextureButton" parent="button_group" unique_id=949052570]
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -22.0
-offset_top = 36.0
-offset_right = -10.0
-offset_bottom = 48.0
-grow_horizontal = 0
-toggle_mode = true
-texture_normal = SubResource("AtlasTexture_fqr1d")
-texture_pressed = SubResource("AtlasTexture_gxxro")
-stretch_mode = 0
-
 [node name="info" type="TextureButton" parent="button_group" unique_id=68556693]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
 offset_left = -20.0
-offset_top = 51.0
+offset_top = 35.0
 offset_right = -11.0
-offset_bottom = 62.0
+offset_bottom = 46.0
 grow_horizontal = 0
 texture_normal = SubResource("AtlasTexture_fstgh")
 texture_pressed = SubResource("AtlasTexture_wshxo")
@@ -506,7 +484,10 @@ grow_vertical = 2
 mouse_filter = 2
 color = Color(1, 1, 1, 0)
 
+[node name="bgm" type="AudioStreamPlayer" parent="." unique_id=873225253]
+stream = ExtResource("8_t0a87")
+autoplay = true
+
 [connection signal="pressed" from="background/hero/affection" to="." method="_on_affection_pressed"]
 [connection signal="pressed" from="button_group/play" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="button_group/sound" to="." method="_on_sound_pressed"]
 [connection signal="pressed" from="button_group/info" to="." method="_on_info_pressed"]

@@ -23,7 +23,4 @@ func _on_play_pressed() -> void:
 		get_tree().change_scene_to_file("res://scenes/game/cutscenes/intro.tscn")
 
 func _on_info_pressed() -> void:
-	OS.shell_open("https://docs.google.com/document/d/1jpQr9uMytjZvuMWd_O_TgjggPy6phpP13-Ajt2dYVhc/edit?usp=sharing")
-
-func _on_sound_pressed() -> void:
-	pass # Replace with function body.
+	OS.shell_open("https://drive.google.com/drive/folders/1oxd57H6BnhfWNdmnAcyrZGCbp5Zr2u0E?usp=sharing")
