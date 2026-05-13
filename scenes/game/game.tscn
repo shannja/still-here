@@ -103,11 +103,25 @@ tracks/2/path = NodePath(".")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(5.9666667),
+"times": PackedFloat32Array(6),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [],
 "method": &"to_idle"
+}]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(6),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"to_next"
 }]
 }
 
@@ -152,6 +166,20 @@ tracks/2/keys = {
 "method": &"to_idle"
 }]
 }
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(13),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"to_next"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_jiu3o"]
 resource_name = "to_radio"
@@ -192,6 +220,20 @@ tracks/2/keys = {
 "values": [{
 "args": [],
 "method": &"to_idle"
+}]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(13),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"to_next"
 }]
 }
 
@@ -1238,7 +1280,6 @@ zoom = Vector2(0.565, 0.565)
 
 [node name="ui" type="CanvasLayer" parent="." unique_id=1532762219]
 layer = 2
-visible = false
 
 [node name="fade" type="ColorRect" parent="ui" unique_id=1186861957]
 anchors_preset = 15
