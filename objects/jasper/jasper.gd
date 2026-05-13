@@ -26,5 +26,6 @@ func _physics_process(delta: float) -> void:
 func _input(_event: InputEvent) -> void:
 	if Input.is_action_just_pressed("bark"):
 		is_barking = true
+		$bark.play()
 	elif Input.is_action_just_released("bark"):
 		is_barking = false

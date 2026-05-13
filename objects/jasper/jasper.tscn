@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://oaewl38d6etw" path="res://objects/jasper/idle.png" id="1_ghb5p"]
 [ext_resource type="Script" uid="uid://bhm4qg6wrf4ag" path="res://objects/jasper/jasper.gd" id="1_ltdcx"]
 [ext_resource type="Texture2D" uid="uid://cvpltbhg828x4" path="res://objects/jasper/walk.png" id="2_mvhpe"]
+[ext_resource type="AudioStream" uid="uid://dpvrx5psg03a0" path="res://common/816081__lumaeros__homer-the-golden-retriever.wav" id="4_lrvf0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ghb5p"]
 size = Vector2(41.990967, 25.953152)
@@ -112,3 +113,6 @@ sprite_frames = SubResource("SpriteFrames_xjpnd")
 animation = &"walk"
 autoplay = "idle"
 frame_progress = 0.6394978
+
+[node name="bark" type="AudioStreamPlayer2D" parent="." unique_id=1257669302]
+stream = ExtResource("4_lrvf0")

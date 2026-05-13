@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://nu8d20nixt1l" path="res://scenes/game/cutscenes/intro.gd" id="1_puk53"]
 [ext_resource type="Texture2D" uid="uid://dq7yoymnnrsux" path="res://scenes/game/cutscenes/intro.png" id="2_m4h42"]
+[ext_resource type="FontFile" uid="uid://df8e6n18a8wa2" path="res://common/Pixelify_Sans/static/PixelifySans-Regular.ttf" id="3_hpmgh"]
 
 [sub_resource type="Environment" id="Environment_m4h42"]
 background_mode = 3
@@ -9,6 +10,205 @@ glow_enabled = true
 glow_intensity = 0.5
 glow_bloom = 1.0
 adjustment_enabled = true
+
+[sub_resource type="Animation" id="Animation_h2jf5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("dialog:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("dialog:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Good boy."]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ui/fade:color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_hpmgh"]
+resource_name = "dialogue_1"
+length = 7.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("dialog:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1.9, 2.9, 5.866667, 6.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("dialog:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Sam has been blind for fifteen years."]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ui/fade:color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.9666668),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_4ddid"]
+resource_name = "dialogue_2"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("dialog:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 3.966667, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("dialog:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Last Tuesday, he was diagnosed with dementia."]
+}
+
+[sub_resource type="Animation" id="Animation_kapxt"]
+resource_name = "dialogue_3"
+length = 8.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("dialog:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 5.6000004, 6.633333),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("dialog:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["He doesn't know yet."]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(8),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"to_game"
+}]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ui/fade:color")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(6.4666667, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_h2jf5"]
+_data = {
+&"RESET": SubResource("Animation_h2jf5"),
+&"dialogue_1": SubResource("Animation_hpmgh"),
+&"dialogue_2": SubResource("Animation_4ddid"),
+&"dialogue_3": SubResource("Animation_kapxt")
+}
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_hpmgh"]
+animation = &"dialogue_1"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_h2jf5"]
+animation = &"dialogue_2"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_4ddid"]
+animation = &"dialogue_3"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_kapxt"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ov3o6"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_b40hj"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_4ddid"]
+states/dialogue_1/node = SubResource("AnimationNodeAnimation_hpmgh")
+states/dialogue_1/position = Vector2(380.66666, 109.333336)
+states/dialogue_2/node = SubResource("AnimationNodeAnimation_h2jf5")
+states/dialogue_2/position = Vector2(575.3333, 109.333336)
+states/dialogue_3/node = SubResource("AnimationNodeAnimation_4ddid")
+states/dialogue_3/position = Vector2(688.6667, 108)
+transitions = ["Start", "dialogue_1", SubResource("AnimationNodeStateMachineTransition_kapxt"), "dialogue_1", "dialogue_2", SubResource("AnimationNodeStateMachineTransition_ov3o6"), "dialogue_2", "dialogue_3", SubResource("AnimationNodeStateMachineTransition_b40hj")]
 
 [node name="intro" type="Node" unique_id=733655987]
 script = ExtResource("1_puk53")
@@ -19,3 +219,39 @@ centered = false
 
 [node name="world_environment" type="WorldEnvironment" parent="." unique_id=1652909326]
 environment = SubResource("Environment_m4h42")
+
+[node name="animation_player" type="AnimationPlayer" parent="." unique_id=1703135917]
+libraries/ = SubResource("AnimationLibrary_h2jf5")
+
+[node name="animation_tree" type="AnimationTree" parent="." unique_id=1352244197]
+tree_root = SubResource("AnimationNodeStateMachine_4ddid")
+anim_player = NodePath("../animation_player")
+
+[node name="dialog" type="Label" parent="." unique_id=624949036]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -131.88158
+offset_top = -161.66989
+offset_right = 14.881546
+offset_bottom = -96.38039
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("3_hpmgh")
+theme_override_font_sizes/font_size = 11
+text = "Good boy."
+autowrap_mode = 2
+
+[node name="ui" type="CanvasLayer" parent="." unique_id=600270712]
+layer = 2
+
+[node name="fade" type="ColorRect" parent="ui" unique_id=1913634177]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2

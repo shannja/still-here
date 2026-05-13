@@ -127,11 +127,11 @@ _data = {
 &"next_scene": SubResource("Animation_t0a87")
 }
 
-[sub_resource type="Gradient" id="Gradient_r8yej"]
+[sub_resource type="Gradient" id="Gradient_3y2rt"]
 colors = PackedColorArray(0.8080603, 0.8723983, 0.92495763, 1, 0, 0.62352943, 0.7411765, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_037ec"]
-gradient = SubResource("Gradient_r8yej")
+gradient = SubResource("Gradient_3y2rt")
 width = 256
 height = 256
 fill_from = Vector2(1, 1)
@@ -421,10 +421,7 @@ centered = false
 position = Vector2(162.88725, 86.20652)
 scale = Vector2(0.75, 0.75)
 sprite_frames = SubResource("SpriteFrames_037ec")
-animation = &"affection"
-autoplay = "alive"
-frame = 20
-frame_progress = 1.0
+animation = &"alive"
 centered = false
 
 [node name="affection" type="Button" parent="background/hero" unique_id=2123339074]
@@ -511,3 +508,5 @@ color = Color(1, 1, 1, 0)
 
 [connection signal="pressed" from="background/hero/affection" to="." method="_on_affection_pressed"]
 [connection signal="pressed" from="button_group/play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="button_group/sound" to="." method="_on_sound_pressed"]
+[connection signal="pressed" from="button_group/info" to="." method="_on_info_pressed"]
